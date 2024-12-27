@@ -9,7 +9,6 @@ import {
   faHandshake,
   faScaleBalanced,
 } from "@fortawesome/free-solid-svg-icons";
-import { faArchway } from "@fortawesome/free-solid-svg-icons/faArchway";
 
 const Home: React.FC = () => {
   return (
