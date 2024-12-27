@@ -1,0 +1,209 @@
+@import "./presets";
+
+section {
+  header {
+    @include flex(center, space-around);
+    height: 100vh;
+    background-color: #f3f3f3;
+    padding: 0 1rem;
+    padding-top: 100px;
+    .description {
+      color: $txtColor;
+      line-height: 40px;
+      flex-basis: 50%;
+      h1 {
+        font-size: 35px;
+        line-height: 50px;
+      }
+      a {
+        text-decoration: none;
+        font-family: $font;
+        background-color: $accentColor;
+        color: #fff;
+        padding: 0.8rem 1.7rem;
+        border-radius: 10px;
+        font-size: 17px;
+        margin: 1rem 0;
+        transition: 0.3s ease-in-out;
+        &:hover {
+          background-color: darken($accentColor, 5%);
+        }
+      }
+      h1,
+      p,
+      a {
+        margin: 1rem 0;
+      }
+    }
+    .animatedGif {
+      width: 50%;
+      flex-basis: 30%;
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+    @include media(1200px) {
+      padding-top: 130px;
+      flex-direction: column;
+      height: auto;
+      .description {
+        flex-basis: 100%;
+      }
+    }
+    @include media(574px) {
+      .description {
+        line-height: 30px;
+        h1 {
+          font-size: 22px;
+          font-weight: 500;
+          line-height: 40px;
+        }
+        a {
+          font-size: 15px;
+          padding: 0.7rem 1.4rem;
+        }
+      }
+      .animatedGif {
+        margin: 1rem 0;
+      }
+    }
+  }
+  .intro {
+    margin-top: 50px;
+    width: 100%;
+    & > p:nth-child(1) {
+      width: 100%;
+      margin: 1rem 0;
+      text-align: center;
+      font-weight: 500;
+      font-size: 15px;
+      color: #666;
+      position: relative;
+      &::after {
+        content: "";
+        display: inline-block;
+        position: absolute;
+        width: 5%;
+        height: 2px;
+        bottom: -2px;
+        left: 50%;
+        transform: translateX(-50%);
+        transition: 0.35s linear;
+        background-color: #333;
+        border-radius: 3px;
+      }
+    }
+    & > p:nth-child(2) {
+      width: 50%;
+      margin: 1rem auto;
+      text-align: center;
+      font-weight: 400;
+      font-size: 16px;
+      color: $txtColor;
+    }
+    .flexWrap {
+      @include flex(center, space-around);
+      .item {
+        @include flex(center, center);
+        padding: 1rem;
+        border-radius: 10px;
+        // width: 300px;
+        .icon {
+          color: #fff;
+          font-size: 20px;
+          padding: 1rem;
+          border-radius: 50%;
+          margin: 0 1rem 0 0;
+        }
+        & > div:nth-child(2) {
+          h2 {
+            font-weight: 500;
+            font-size: 18px;
+            margin: 0.3rem 0;
+          }
+          p {
+            font-size: 15px;
+            line-height: 25px;
+          }
+        }
+        &:nth-child(1) .icon {
+          background-color: $accentColor;
+        }
+        &:nth-child(2) .icon {
+          background-color: darken($accentColor, 5%);
+        }
+        &:nth-child(3) .icon {
+          background-color: #343d48;
+        }
+        &:hover {
+          background: #ddd;
+        }
+      }
+    }
+    @include media(1110px) {
+      .flexWrap {
+        flex-direction: column;
+        .item {
+          width: 95%;
+          margin: 0.3rem auto;
+        }
+      }
+    }
+    @include media(630px) {
+      & > p:nth-child(2) {
+        width: 95%;
+        font-size: 14px;
+      }
+      .flexWrap .item > div:nth-child(2) p {
+        font-size: 14px;
+      }
+      .flexWrap .item > div:nth-child(2) h2 {
+        font-size: 16px;
+      }
+    }
+    .learnMore {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      a {
+        color: #fff;
+        text-align: center;
+        width: 250px;
+        padding: 0.7rem 1rem;
+        font-size: 15px;
+        margin: 1rem 0;
+        text-decoration: none;
+        background: #343d48;
+        transition: 0.3s linear;
+        &:hover {
+          border: 2px solid #343d48;
+          color: #444;
+          background: transparent;
+          padding: calc(0.7rem - 2px) 1rem;
+        }
+      }
+    }
+  }
+  .about {
+    .flexWrap .item {
+      align-items: flex-start;
+      .icon {
+        background-color: transparent !important;
+        padding: 0;
+        flex-basis: 300px;
+        margin: 0;
+        img {
+          width: 100%;
+          height: 100%;
+        }
+        @include media(800px) {
+          flex-basis: 500px;
+        }
+        @include media(450px) {
+          flex-basis: 700px;
+        }
+      }
+    }
+  }
+}

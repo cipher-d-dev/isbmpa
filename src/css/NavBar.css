@@ -1,0 +1,216 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  border-bottom: 1px solid #eee;
+  position: fixed;
+  width: 100%;
+  z-index: 3;
+  background: #fff;
+}
+nav .logo,
+nav ul > .logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+nav .logo .imgWrap,
+nav ul > .logo .imgWrap {
+  width: 50px;
+  margin-right: 0.3rem;
+}
+nav .logo .imgWrap img,
+nav ul > .logo .imgWrap img {
+  width: 100%;
+  height: 100%;
+}
+nav .logo span,
+nav ul > .logo span {
+  font-size: 25px;
+  font-weight: 500;
+}
+@media screen and (max-width: 400px) {
+  nav .logo span,
+  nav ul > .logo span {
+    font-size: 18px;
+  }
+}
+nav ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+}
+nav ul .logo {
+  display: none;
+}
+nav ul li {
+  position: relative;
+  margin: 0 0.7rem;
+}
+nav ul li a {
+  text-decoration: none;
+  color: #333;
+  transition: 0.3s linear;
+}
+nav ul li a:hover {
+  color: #35b47d;
+}
+nav ul li a::after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: -2px;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: 0.35s linear;
+  background-color: #333;
+  border-radius: 3px;
+}
+nav ul li a:hover::after {
+  width: 100%;
+}
+nav ul li a.isActive {
+  color: #3CC68A;
+}
+nav .flexWrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+nav .flexWrap a {
+  text-decoration: none;
+  font-family: "DM Sans", sans-serif;
+  background-color: #3CC68A;
+  color: #fff;
+  padding: 0.5rem 1.4rem;
+  border-radius: 10px;
+  font-size: 14px;
+  margin: 1rem 0;
+  transition: 0.3s ease-in-out;
+  margin-right: 0.9rem;
+}
+nav .flexWrap a:hover {
+  background-color: #35b47d;
+}
+nav .hamburger {
+  height: 2px;
+  display: none;
+  width: 20px;
+  background-color: #5e5e5e;
+  transition: 0.2s linear;
+  z-index: 1000;
+  position: relative;
+  cursor: pointer;
+}
+nav .hamburger::before {
+  content: "";
+  display: inline-flex;
+  height: 2px;
+  width: 25px;
+  background-color: inherit;
+}
+nav .hamburger::after {
+  content: "";
+  display: inline-flex;
+  margin-top: 0.3rem;
+  height: 2px;
+  width: 25px;
+  background-color: inherit;
+}
+nav .hamburgerTranslate {
+  transform: rotate(45deg);
+}
+nav .hamburgerTranslate::after {
+  transform: rotate(-95deg) translate(23%, -40%);
+  width: 4000%;
+}
+nav #overlay {
+  position: fixed;
+  width: 0%;
+  height: 100%;
+  z-index: 59;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.7137254902);
+  display: none;
+}
+@media screen and (max-width: 400px) {
+  nav {
+    padding: 0.5rem;
+  }
+}
+@media screen and (max-width: 1110px) {
+  nav {
+    width: calc(100% - 250px);
+  }
+  nav ul {
+    position: fixed;
+    top: 0;
+    width: 250px;
+    background: #ddd;
+    border-right: 2px solid #3CC68A;
+    flex-direction: column;
+    overflow-y: scroll;
+    height: 100%;
+    left: -100%;
+    transition: 0.3s linear;
+    z-index: 99;
+    overflow-x: hidden;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding-top: 50px;
+  }
+  nav ul li {
+    padding: 1rem 0.5rem;
+    width: 100%;
+    margin: 0;
+  }
+  nav ul li a {
+    color: #333;
+  }
+  nav ul li a::after {
+    display: none;
+  }
+  nav ul li a.isActive {
+    color: #000;
+    font-weight: 500;
+  }
+  nav ul li:hover {
+    background: #bbb;
+  }
+  nav ul.navOpen {
+    left: 0;
+  }
+  nav .hamburger {
+    display: inline-flex;
+  }
+}
+@media screen and (max-width: 800px) {
+  nav {
+    width: 100%;
+  }
+  nav #overlay {
+    display: block;
+  }
+  nav ul {
+    background-color: #fff;
+    padding: 50px 0.5rem 0 0.5rem;
+  }
+  nav ul .logo {
+    display: flex;
+    margin-bottom: 0.4rem;
+  }
+  nav .flexWrap a {
+    display: none;
+  }
+}/*# sourceMappingURL=NavBar.css.map */
