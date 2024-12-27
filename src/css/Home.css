@@ -1,0 +1,218 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+section header {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 100vh;
+  background-color: #f3f3f3;
+  padding: 0 1rem;
+  padding-top: 100px;
+}
+section header .description {
+  color: #02073E;
+  line-height: 40px;
+  flex-basis: 50%;
+}
+section header .description h1 {
+  font-size: 35px;
+  line-height: 50px;
+}
+section header .description a {
+  text-decoration: none;
+  font-family: "DM Sans", sans-serif;
+  background-color: #3CC68A;
+  color: #fff;
+  padding: 0.8rem 1.7rem;
+  border-radius: 10px;
+  font-size: 17px;
+  margin: 1rem 0;
+  transition: 0.3s ease-in-out;
+}
+section header .description a:hover {
+  background-color: #35b47d;
+}
+section header .description h1,
+section header .description p,
+section header .description a {
+  margin: 1rem 0;
+}
+section header .animatedGif {
+  width: 50%;
+  flex-basis: 30%;
+}
+section header .animatedGif img {
+  width: 100%;
+  height: 100%;
+}
+@media screen and (max-width: 1200px) {
+  section header {
+    padding-top: 130px;
+    flex-direction: column;
+    height: auto;
+  }
+  section header .description {
+    flex-basis: 100%;
+  }
+}
+@media screen and (max-width: 574px) {
+  section header .description {
+    line-height: 30px;
+  }
+  section header .description h1 {
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 40px;
+  }
+  section header .description a {
+    font-size: 15px;
+    padding: 0.7rem 1.4rem;
+  }
+  section header .animatedGif {
+    margin: 1rem 0;
+  }
+}
+section .intro {
+  margin-top: 50px;
+  width: 100%;
+}
+section .intro > p:nth-child(1) {
+  width: 100%;
+  margin: 1rem 0;
+  text-align: center;
+  font-weight: 500;
+  font-size: 15px;
+  color: #666;
+  position: relative;
+}
+section .intro > p:nth-child(1)::after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  width: 5%;
+  height: 2px;
+  bottom: -2px;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: 0.35s linear;
+  background-color: #333;
+  border-radius: 3px;
+}
+section .intro > p:nth-child(2) {
+  width: 50%;
+  margin: 1rem auto;
+  text-align: center;
+  font-weight: 400;
+  font-size: 16px;
+  color: #02073E;
+}
+section .intro .flexWrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+section .intro .flexWrap .item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  border-radius: 10px;
+}
+section .intro .flexWrap .item .icon {
+  color: #fff;
+  font-size: 20px;
+  padding: 1rem;
+  border-radius: 50%;
+  margin: 0 1rem 0 0;
+}
+section .intro .flexWrap .item > div:nth-child(2) h2 {
+  font-weight: 500;
+  font-size: 18px;
+  margin: 0.3rem 0;
+}
+section .intro .flexWrap .item > div:nth-child(2) p {
+  font-size: 15px;
+  line-height: 25px;
+}
+section .intro .flexWrap .item:nth-child(1) .icon {
+  background-color: #3CC68A;
+}
+section .intro .flexWrap .item:nth-child(2) .icon {
+  background-color: #35b47d;
+}
+section .intro .flexWrap .item:nth-child(3) .icon {
+  background-color: #343d48;
+}
+section .intro .flexWrap .item:hover {
+  background: #ddd;
+}
+@media screen and (max-width: 1110px) {
+  section .intro .flexWrap {
+    flex-direction: column;
+  }
+  section .intro .flexWrap .item {
+    width: 95%;
+    margin: 0.3rem auto;
+  }
+}
+@media screen and (max-width: 630px) {
+  section .intro > p:nth-child(2) {
+    width: 95%;
+    font-size: 14px;
+  }
+  section .intro .flexWrap .item > div:nth-child(2) p {
+    font-size: 14px;
+  }
+  section .intro .flexWrap .item > div:nth-child(2) h2 {
+    font-size: 16px;
+  }
+}
+section .intro .learnMore {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+section .intro .learnMore a {
+  color: #fff;
+  text-align: center;
+  width: 250px;
+  padding: 0.7rem 1rem;
+  font-size: 15px;
+  margin: 1rem 0;
+  text-decoration: none;
+  background: #343d48;
+  transition: 0.3s linear;
+}
+section .intro .learnMore a:hover {
+  border: 2px solid #343d48;
+  color: #444;
+  background: transparent;
+  padding: calc(0.7rem - 2px) 1rem;
+}
+section .about .flexWrap .item {
+  align-items: flex-start;
+}
+section .about .flexWrap .item .icon {
+  background-color: transparent !important;
+  padding: 0;
+  flex-basis: 300px;
+  margin: 0;
+}
+section .about .flexWrap .item .icon img {
+  width: 100%;
+  height: 100%;
+}
+@media screen and (max-width: 800px) {
+  section .about .flexWrap .item .icon {
+    flex-basis: 500px;
+  }
+}
+@media screen and (max-width: 450px) {
+  section .about .flexWrap .item .icon {
+    flex-basis: 700px;
+  }
+}/*# sourceMappingURL=Home.css.map */

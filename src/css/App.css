@@ -1,0 +1,24 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "DM Sans", sans-serif;
+}
+
+#root > div {
+  position: relative;
+  width: auto;
+  transition: 0.3s linear;
+}
+
+.condensedBody {
+  margin-left: 250px;
+}
+@media screen and (max-width: 800px) {
+  .condensedBody {
+    margin-left: 0;
+  }
+}/*# sourceMappingURL=App.css.map */
