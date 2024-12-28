@@ -2,7 +2,12 @@ import React, { useEffect, useState } from "react";
 import "../css/NavBar.css";
 import logo from "../assets/logo.png";
 import logoGhana from "../assets/logo-ghana.png";
-import { Link, NavigateFunction, useLocation, useNavigate } from "react-router-dom";
+import {
+  Link,
+  NavigateFunction,
+  useLocation,
+  useNavigate,
+} from "react-router-dom";
 
 interface NavBarProps {
   navOpen: boolean;
@@ -19,7 +24,7 @@ const NavBar: React.FC<NavBarProps> = ({ navOpen, setnavOpen }) => {
   };
 
   const returnStyle = (): object => {
-    if (window.outerWidth < 1110 && window.outerWidth > 800 && navOpen) {
+    if (window.outerWidth < 1280 && window.outerWidth > 800 && navOpen) {
       return { width: "calc(100% - 250px)" };
     }
     return { width: "100%" };
@@ -48,7 +53,13 @@ const NavBar: React.FC<NavBarProps> = ({ navOpen, setnavOpen }) => {
         <div className="imgWrap">
           <img src={logo} alt="" />
         </div>
-        <span>ISMBPA</span>
+        <span>
+          The Institute Of Strategic Business Management And Public
+          Administration Ghana (ISBMPA)
+        </span>
+        <div className="imgWrap ghana">
+          <img src={logoGhana} alt="" />
+        </div>
       </div>
       <ul className={navOpen ? "navOpen" : ""}>
         <div className="logo">
@@ -139,16 +150,17 @@ const NavBar: React.FC<NavBarProps> = ({ navOpen, setnavOpen }) => {
           <img src={logoGhana} alt="" />
         </div>
         <div
-          style={{ cursor: "pointer" }}
+          style={{
+            cursor: "pointer",
+            ...(window.outerWidth < 800 && navOpen
+              ? { position: "absolute", marginLeft: "400px" }
+              : {}),
+          }}
+          className="hamburgerWrap"
           onClick={() => setnavOpen((prev: boolean) => !prev)}
         >
           <div
             className={`hamburger${navOpen ? " hamburgerTranslate" : ""}`}
-            style={
-              window.outerWidth < 800 && navOpen
-                ? { backgroundColor: "#fff" }
-                : {}
-            }
           ></div>
         </div>
       </div>

@@ -19,7 +19,9 @@ nav .logo,
 nav ul > .logo {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
+  width: -moz-fit-content;
+  width: fit-content;
 }
 nav .logo .imgWrap,
 nav ul > .logo .imgWrap {
@@ -33,23 +35,31 @@ nav ul > .logo .imgWrap img {
 }
 nav .logo span,
 nav ul > .logo span {
-  font-size: 25px;
+  font-size: 13px;
   font-weight: 500;
+  width: 50%;
 }
 @media screen and (max-width: 400px) {
   nav .logo span,
   nav ul > .logo span {
-    font-size: 18px;
+    font-size: 12px;
   }
+}
+nav .ghana {
+  display: none;
 }
 nav ul {
   display: flex;
   align-items: center;
   justify-content: center;
   list-style: none;
+  flex-basis: 100%;
 }
 nav ul .logo {
   display: none;
+}
+nav ul .logo span {
+  font-size: 17px !important;
 }
 nav ul li {
   position: relative;
@@ -93,6 +103,9 @@ nav .flexWrap .logo {
 nav .flexWrap .logo img {
   width: 100%;
   height: 100%;
+}
+nav .hamburgerWrap {
+  transition: 0.3s linear;
 }
 nav .hamburger {
   height: 2px;
@@ -138,10 +151,13 @@ nav #overlay {
 }
 @media screen and (max-width: 400px) {
   nav {
-    padding: 0.5rem;
+    padding: 0.9rem;
+  }
+  nav .logo {
+    flex-basis: 85% !important;
   }
 }
-@media screen and (max-width: 1110px) {
+@media screen and (max-width: 1280px) {
   nav {
     width: calc(100% - 250px);
   }
@@ -161,6 +177,7 @@ nav #overlay {
     align-items: flex-start;
     justify-content: flex-start;
     padding-top: 50px;
+    flex-basis: auto;
   }
   nav ul li {
     padding: 1rem 0.5rem;
@@ -190,6 +207,10 @@ nav #overlay {
 @media screen and (max-width: 800px) {
   nav {
     width: 100%;
+    flex-direction: row-reverse;
+  }
+  nav .ghana {
+    display: flex;
   }
   nav #overlay {
     display: block;
@@ -201,6 +222,17 @@ nav #overlay {
   nav ul .logo {
     display: flex;
     margin-bottom: 0.4rem;
+    flex-basis: auto !important;
+  }
+  nav .logo {
+    justify-content: flex-start;
+    flex-basis: 80%;
+  }
+  nav .logo span {
+    width: 100%;
+  }
+  nav .flexWrap > .logo {
+    display: none;
   }
   nav .flexWrap a {
     display: none;

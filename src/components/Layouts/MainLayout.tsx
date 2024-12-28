@@ -1,6 +1,5 @@
 import { Outlet } from "react-router-dom";
 import Navbar from "../NavBar";
-import Footer from "../Footer";
 
 interface MainLayoutProps {
   navOpen: boolean;
@@ -15,7 +14,6 @@ const MainLayout: React.FC<MainLayoutProps> = ({ navOpen, setnavOpen }) => {
       <main>
         <Outlet />
       </main>
-      <Footer />
     </div>
   );
 };
