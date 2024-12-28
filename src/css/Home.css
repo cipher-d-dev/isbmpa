@@ -64,9 +64,13 @@ section header .animatedGif img {
     line-height: 30px;
   }
   section header .description h1 {
-    font-size: 22px;
+    font-size: 18px;
     font-weight: 500;
-    line-height: 40px;
+    line-height: 30px;
+  }
+  section header .description p {
+    font-size: 13px;
+    line-height: 25px;
   }
   section header .description a {
     font-size: 15px;

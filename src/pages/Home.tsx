@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import logo from "../assets/logo.png";
-import logoGhana from "../assets/logo-ghana.png";
+import logoEdit from "../assets/logo-edit.png";
 import "../css/Home.css";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -15,6 +15,7 @@ import {
   faTrophy,
 } from "@fortawesome/free-solid-svg-icons";
 import Spinner from "../components/Spinner";
+import Footer from "../components/Footer";
 
 const Home: React.FC = () => {
   const [percentage, setPercentage] = useState<number>(95);
@@ -101,7 +102,7 @@ const Home: React.FC = () => {
         <div className="flexWrap">
           <div className="item">
             <div className="icon">
-              <img src={logoGhana} alt="" />
+              <img src={logoEdit} alt="" />
             </div>
             <div>
               <h2>ISBMPA</h2>
@@ -239,6 +240,7 @@ const Home: React.FC = () => {
           <Link to={"/about"}>Learn More</Link>
         </div>
       </section>
+      <Footer />
     </section>
   );
 };

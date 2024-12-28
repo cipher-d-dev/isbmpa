@@ -5,6 +5,7 @@ footer {
     flex-direction: column;
     background-color: #e9e9e9;
     padding: 2rem;
+    overflow: hidden;
     .footerFlex {
         @include flex(center, space-between);
         .item {
@@ -60,22 +61,17 @@ footer {
             }
         }
     }
-    @include media(1230px) {
+    @include media(1280px) {
         .footerFlex {
             display: grid;
             place-content: flex-start;
-            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-columns: 1fr 1fr;
             .item {
                 margin: 1rem 0;
             }
         }
     }
-    @include media(950px) {
-        .footerFlex {
-            grid-template-columns: 1fr 1fr;
-        }
-    }
-    @include media(630px) {
+    @include media(900px) {
         .footerFlex {
             grid-template-columns: 1fr;
             place-content: center;

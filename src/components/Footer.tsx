@@ -3,7 +3,9 @@ import { Link } from "react-router-dom";
 import logo from "../assets/logo.png";
 import "../css/Footer.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import "../css/App.css"
 import { faFacebook, faXTwitter } from "@fortawesome/free-brands-svg-icons";
+
 
 const Footer: React.FC = () => {
   return (

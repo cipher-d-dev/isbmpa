@@ -10,28 +10,37 @@ nav {
   background: #fff;
   .logo,
   ul > .logo {
-    @include flex(center, center);
+    @include flex(center, flex-start);
+    width: fit-content;
     .imgWrap {
       width: 50px;
-      margin-right: .3rem;
+      margin-right: 0.3rem;
       img {
         width: 100%;
         height: 100%;
       }
     }
     span {
-      font-size: 25px;
+      font-size: 13px;
       font-weight: 500;
+      width: 50%;
       @include media(400px) {
-        font-size: 18px;
+        font-size: 12px;
       }
     }
+  }
+  .ghana {
+    display: none;
   }
   ul {
     @include flex(center, center);
     list-style: none;
+    flex-basis: 100%;
     .logo {
       display: none;
+      span {
+        font-size: 17px !important;
+      }
     }
     li {
       position: relative;
@@ -75,7 +84,7 @@ nav {
       }
     }
   }
-
+  .hamburgerWrap { transition: .3s linear; }
   .hamburger {
     height: 2px;
     display: none;
@@ -121,9 +130,12 @@ nav {
   }
 
   @include media(400px) {
-    padding: .5rem;
+    padding: .9rem;
+    .logo {
+      flex-basis: 85% !important;
+    }
   }
-  @include media(1110px) {
+  @include media(1280px) {
     width: calc(100% - 250px);
     ul {
       position: fixed;
@@ -141,6 +153,7 @@ nav {
       align-items: flex-start;
       justify-content: flex-start;
       padding-top: 50px;
+      flex-basis: auto;
       li {
         padding: 1rem 0.5rem;
         width: 100%;
@@ -170,17 +183,32 @@ nav {
 
   @include media(800px) {
     width: 100%;
+    flex-direction: row-reverse;
+    .ghana {
+      display: flex;
+    }
     #overlay {
       display: block;
     }
     ul {
       background-color: #fff;
-      padding: 50px .5rem 0 .5rem;
+      padding: 50px 0.5rem 0 0.5rem;
       .logo {
         display: flex;
         margin-bottom: 0.4rem;
+        flex-basis: auto !important;
       }
     }
-    .flexWrap a { display: none; }
+    .logo {
+      justify-content: flex-start;
+      flex-basis: 80%;
+      span { width: 100%; }
+    }
+    .flexWrap > .logo {
+      display: none;
+    }
+    .flexWrap a {
+      display: none;
+    }
   }
 }
