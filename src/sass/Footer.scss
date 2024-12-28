@@ -49,6 +49,15 @@ footer {
         &>p {
             color: #343d48;
             font-size: 15px;
+            @include flex(center, center);
+            p {
+                margin: 0 .3rem;
+                @include flex(center, center);
+                a {
+                    color: #343d48;
+                    margin: 0 .3rem;
+                }
+            }
         }
     }
     @include media(1230px) {
@@ -72,6 +81,18 @@ footer {
             place-content: center;
             .item {
                 place-self: center;
+            }
+        }
+        .footerMain {
+            flex-direction: column;
+            align-items: flex-start;
+            &>p {
+                margin: 1rem 0;
+                flex-direction: column;
+                align-items: flex-start; 
+                p{
+                    margin: 1rem 0;
+                }
             }
         }
     }

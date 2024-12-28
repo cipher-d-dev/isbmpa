@@ -1,8 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import logo from "../assets/logo.png";
-import '../css/Footer.css';
+import "../css/Footer.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faFacebook, faXTwitter } from "@fortawesome/free-brands-svg-icons";
 
 const Footer: React.FC = () => {
   return (
@@ -33,20 +34,31 @@ const Footer: React.FC = () => {
         <div className="item">
           <h2>Location</h2>
           <p>
-            <b>Ghana Headquarters Office</b>: HNO C00094, Ghana Flag Area, Kasoa,
-            Awutu-Senya East, Central Ghana.<br /> <b>Nigeria Liaison Office</b> (Lagos
-            Island): 5, Ibrahim Paseda Street, Awoyaya, Ibeju-Lekki, Lagos
+            <b>Ghana Headquarters Office</b>: HNO C00094, Ghana Flag Area,
+            Kasoa, Awutu-Senya East, Central Ghana.
+            <br /> <b>Nigeria Liaison Office</b> (Lagos Island): 5, Ibrahim
+            Paseda Street, Awoyaya, Ibeju-Lekki, Lagos
           </p>
         </div>
       </div>
       <div className="footerMain">
         <div className="logo">
-            <div className="image">
-                <img src={logo} alt="" />
-            </div>
-            <span>ISBMPA</span>
+          <div className="image">
+            <img src={logo} alt="" />
+          </div>
+          <span>ISBMPA</span>
         </div>
-        <p>&copy; 2024 Copyright ISBMPA, All Rights Reserved</p>
+        <p>
+          <span>&copy; 2024 Copyright ISBMPA, All Rights Reserved</span>
+          <p>
+            <Link to={"https://facebook.com"}>
+              <FontAwesomeIcon icon={faFacebook} />
+            </Link>
+            <Link to={"https://twitter.com"}>
+              <FontAwesomeIcon icon={faXTwitter} />
+            </Link>
+          </p>
+        </p>
       </div>
     </footer>
   );
