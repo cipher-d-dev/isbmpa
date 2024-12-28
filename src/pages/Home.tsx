@@ -1,16 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 import logo from "../assets/logo.png";
 import logoGhana from "../assets/logo-ghana.png";
 import "../css/Home.css";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
+  faEnvelopeCircleCheck,
   faGraduationCap,
   faHandshake,
+  faLocation,
+  faLocationDot,
+  faPhoneVolume,
   faScaleBalanced,
+  faTrophy,
 } from "@fortawesome/free-solid-svg-icons";
+import Spinner from "../components/Spinner";
 
 const Home: React.FC = () => {
+  const [percentage, setPercentage] = useState<number>(95);
+
   return (
     <section>
       <header>
@@ -112,8 +120,128 @@ const Home: React.FC = () => {
           <Link to={"/about"}>About Us</Link>
         </div>
       </section>
+      <section className="intro about imageDescribe">
+        <p>Governing Council</p>
+        <p>
+          A distinguished team of visionary leaders, dedicated to guiding our
+          institution toward excellence and fostering innovation for a brighter
+          future
+        </p>
+        <div className="flexImages">
+          <div className="item">
+            <div className="image">
+              <img src="https://i.pravatar.cc/300?img=1" alt="" />
+            </div>
+            <p className="description">Jane Doe</p>
+          </div>
+          <div className="item">
+            <div className="image">
+              <img src="https://i.pravatar.cc/300?img=5" alt="" />
+            </div>
+            <p className="description">Millan Perry</p>
+          </div>
+          <div className="item">
+            <div className="image">
+              <img src="https://i.pravatar.cc/300?img=12" alt="" />
+            </div>
+            <p className="description">John Kraat</p>
+          </div>
+          <div className="item">
+            <div className="image">
+              <img src="https://i.pravatar.cc/300?img=13" alt="" />
+            </div>
+            <p className="description">Max Grim</p>
+          </div>
+        </div>
+      </section>
+      <section className="intro about listed">
+        <p>Our Team</p>
+        <p>
+          Our leadership comprises seasoned professionals and distinguished
+          academics who bring a wealth of experience to the table.
+        </p>
+        <ul>
+          <li>Dr. Jane Doe</li>
+          <li>Dr. Millan Perry</li>
+          <li>Hon. John Kraat</li>
+          <li>Mr. Max Grim</li>
+        </ul>
+        <Spinner percentage={percentage} setPercentage={setPercentage} />
+        <div className="learnMore">
+          <Link to={"/our-team"}>Check Out Our Team</Link>
+        </div>
+      </section>
+      <section className="intro animated">
+        <p>Awards</p>
+        <p>Check Out All ISBMPA Awards</p>
+        <h3 style={{ textAlign: "center" }}>
+          <FontAwesomeIcon icon={faTrophy} />
+          &nbsp; This section is coming soon....
+        </h3>
+      </section>
+      <section className="intro coloured">
+        <p>Reach Out To Us</p>
+        <p>Contact us anytime or anywhere</p>
+        <div className="flexWrap">
+          <div className="item">
+            <div className="icon">
+              <FontAwesomeIcon icon={faLocationDot} />
+            </div>
+            <div>
+              <h2>Ghana Head Office</h2>
+              <p>
+                HNO C00094, Ghana Flag Area, Kasoa, Awutu-Senya East, Central
+                Ghana
+              </p>
+            </div>
+          </div>
+          <div className="item">
+            <div className="icon">
+              <FontAwesomeIcon icon={faLocation} />
+            </div>
+            <div>
+              <h2>Nigeria Liaison Office (Lagos Island)</h2>
+              <p>5, Ibrahim Paseda Street, Awoyaya, Ibeju-Lekki, Lagos</p>
+            </div>
+          </div>
+          <div className="item">
+            <div className="icon">
+              <FontAwesomeIcon icon={faPhoneVolume} />
+            </div>
+            <div>
+              <h2>Give Us A Call</h2>
+              <p>
+                You can always phone us on: +233533441498 +2348060427939
+                +2349077407568
+              </p>
+            </div>
+          </div>
+          <div className="item">
+            <div className="icon">
+              <FontAwesomeIcon icon={faEnvelopeCircleCheck} />
+            </div>
+            <div>
+              <h2>Email Us</h2>
+              <p>
+                Drop an email at:{" "}
+                <div className="flex">
+                  <a href="mailto:fellow@isbmpa.com">fellow@isbmpa.com</a>
+                  <a href="mailto:info@isbmpa.com ">info@isbmpa.com</a>
+                  <a href="mailto:drfreeman.isbmpa@yahoo.com">
+                    drfreeman.isbmpa@yahoo.com
+                  </a>
+                </div>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div className="learnMore">
+          <Link to={"/about"}>Learn More</Link>
+        </div>
+      </section>
     </section>
   );
 };
+// 1 5 13 12
 
 export default Home;

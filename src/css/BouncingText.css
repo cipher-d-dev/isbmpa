@@ -1,0 +1,17 @@
+.bouncing-text {
+  display: inline-flex;
+}
+.bouncing-text span {
+  display: inline-block;
+  font-size: 2rem;
+  animation: bounce 0.5s ease-in-out infinite;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}/*# sourceMappingURL=BouncingText.css.map */

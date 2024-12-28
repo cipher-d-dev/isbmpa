@@ -1,0 +1,55 @@
+import React from "react";
+import { Link } from "react-router-dom";
+import logo from "../assets/logo.png";
+import '../css/Footer.css';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+const Footer: React.FC = () => {
+  return (
+    <footer>
+      <div className="footerFlex">
+        <div className="item">
+          <h2>Links</h2>
+          <Link to="/about">About Us</Link>
+          <Link to="/our-team">Our Team</Link>
+          <Link to="/fellowship-awards">Fellowship Awards</Link>
+          <Link to="/governing-council">Governing Council</Link>
+        </div>
+        <div className="item">
+          <h2>Support</h2>
+          <Link to="/">Home</Link>
+          <Link to="/gallery">Gallery</Link>
+          <Link to="/contact-us">Contact Us</Link>
+        </div>
+        <div className="item">
+          <h2>Contact Us</h2>
+          <p>
+            <a href="mailto:fellow@isbmpa.com">fellow@isbmpa.com</a>
+          </p>
+          <p>+233 533441498</p>
+          <p>+234 8060427939</p>
+          <p>+234 9077407568 </p>
+        </div>
+        <div className="item">
+          <h2>Location</h2>
+          <p>
+            <b>Ghana Headquarters Office</b>: HNO C00094, Ghana Flag Area, Kasoa,
+            Awutu-Senya East, Central Ghana.<br /> <b>Nigeria Liaison Office</b> (Lagos
+            Island): 5, Ibrahim Paseda Street, Awoyaya, Ibeju-Lekki, Lagos
+          </p>
+        </div>
+      </div>
+      <div className="footerMain">
+        <div className="logo">
+            <div className="image">
+                <img src={logo} alt="" />
+            </div>
+            <span>ISBMPA</span>
+        </div>
+        <p>&copy; 2024 Copyright ISBMPA, All Rights Reserved</p>
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;

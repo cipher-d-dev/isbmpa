@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "../css/NavBar.css";
 import logo from "../assets/logo.png";
-import { Link, useLocation } from "react-router-dom";
+import { Link, NavigateFunction, useLocation, useNavigate } from "react-router-dom";
 
 interface NavBarProps {
   navOpen: boolean;
@@ -11,6 +11,7 @@ interface NavBarProps {
 
 const NavBar: React.FC<NavBarProps> = ({ navOpen, setnavOpen }) => {
   const location: any = useLocation();
+  const navigate: NavigateFunction = useNavigate();
 
   const isActive = (path: string): string => {
     return location.pathname === path ? "isActive" : "";
@@ -27,7 +28,7 @@ const NavBar: React.FC<NavBarProps> = ({ navOpen, setnavOpen }) => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setShadow(window.scrollY > 40)
+      setShadow(window.scrollY > 40);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -38,7 +39,9 @@ const NavBar: React.FC<NavBarProps> = ({ navOpen, setnavOpen }) => {
   }, []);
 
   return (
-    <nav style={{ ...returnStyle(), boxShadow: `${shadow ? "0 0 5px #bbb" : ""}` }}>
+    <nav
+      style={{ ...returnStyle(), boxShadow: `${shadow ? "0 0 5px #bbb" : ""}` }}
+    >
       <div id="overlay" style={navOpen ? { width: "100%" } : {}}></div>
       <div className="logo">
         <div className="imgWrap">
@@ -53,22 +56,42 @@ const NavBar: React.FC<NavBarProps> = ({ navOpen, setnavOpen }) => {
           </div>
           <span>ISMBPA</span>
         </div>
-        <li>
+        <li
+          onClick={() => {
+            setnavOpen(false);
+            navigate("/");
+          }}
+        >
           <Link to="/" className={isActive("/")}>
             Home
           </Link>
         </li>
-        <li>
+        <li
+          onClick={() => {
+            setnavOpen(false);
+            navigate("/about");
+          }}
+        >
           <Link to="/about" className={isActive("/about")}>
             About Us
           </Link>
         </li>
-        <li>
+        <li
+          onClick={() => {
+            setnavOpen(false);
+            navigate("/our-team");
+          }}
+        >
           <Link to="/our-team" className={isActive("/our-team")}>
             Our Team
           </Link>
         </li>
-        <li>
+        <li
+          onClick={() => {
+            setnavOpen(false);
+            navigate("/fellowship-awards");
+          }}
+        >
           <Link
             to="/fellowship-awards"
             className={isActive("/fellowship-awards")}
@@ -76,7 +99,12 @@ const NavBar: React.FC<NavBarProps> = ({ navOpen, setnavOpen }) => {
             Fellowship Awards
           </Link>
         </li>
-        <li>
+        <li
+          onClick={() => {
+            setnavOpen(false);
+            navigate("/governing-council");
+          }}
+        >
           <Link
             to="/governing-council"
             className={isActive("/governing-council")}
@@ -84,12 +112,22 @@ const NavBar: React.FC<NavBarProps> = ({ navOpen, setnavOpen }) => {
             Governing Council
           </Link>
         </li>
-        <li>
+        <li
+          onClick={() => {
+            setnavOpen(false);
+            navigate("/gallery");
+          }}
+        >
           <Link to="/gallery" className={isActive("/gallery")}>
             Gallery
           </Link>
         </li>
-        <li>
+        <li
+          onClick={() => {
+            setnavOpen(false);
+            navigate("/contact-us");
+          }}
+        >
           <Link to="/contact-us" className={isActive("/contact-us")}>
             Contact Us
           </Link>
@@ -98,10 +136,18 @@ const NavBar: React.FC<NavBarProps> = ({ navOpen, setnavOpen }) => {
       <div className="flexWrap">
         <Link to={"/contact-us"}>Get in Touch</Link>
         <div
-          className={`hamburger${navOpen ? " hamburgerTranslate" : ""}`}
+          style={{ cursor: "pointer" }}
           onClick={() => setnavOpen((prev: boolean) => !prev)}
-          style={(window.outerWidth < 800 && navOpen) ? { backgroundColor: "#fff" } : {}}
-        ></div>
+        >
+          <div
+            className={`hamburger${navOpen ? " hamburgerTranslate" : ""}`}
+            style={
+              window.outerWidth < 800 && navOpen
+                ? { backgroundColor: "#fff" }
+                : {}
+            }
+          ></div>
+        </div>
       </div>
     </nav>
   );

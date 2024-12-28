@@ -70,7 +70,7 @@ section {
     }
   }
   .intro {
-    margin-top: 50px;
+    margin: 100px 0;
     width: 100%;
     & > p:nth-child(1) {
       width: 100%;
@@ -203,6 +203,86 @@ section {
         @include media(450px) {
           flex-basis: 700px;
         }
+      }
+    }
+  }
+  .flexImages {
+    display: grid;
+    place-content: center;
+    width: 100%;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    margin: 2rem 0 1rem 0;
+    .item {
+      @include flex(center, center);
+      flex-direction: column;
+      border-radius: 13px;
+      border: 2px dashed #bbb;
+      place-self: center;
+      overflow: hidden;
+      width: fit-content;
+      cursor: pointer;
+      position: relative;
+      height: auto;
+      transition: height 0.3s linear;
+      .image {
+        @include flex(center, center);
+        transition: 0.3s linear;
+        width: 250px;
+        img {
+          width: 100%;
+          transition: 0.3s linear;
+          height: 100%;
+        }
+      }
+      .description {
+        transition: opacity 0.3s ease-in-out;
+        border-top: 2px solid #343d48;
+        width: 100%;
+        text-align: center;
+        padding: 0.5rem 0;
+        font-size: 15px;
+        background-color: #333;
+        color: #fff;
+        height: fit-content;
+      }
+      &:hover {
+        height: fit-content;
+        .description {
+          position: absolute;
+          height: 100%;
+          background: #33333365;
+          @include flex(center, center);
+        }
+      }
+    }
+    @include media(1100px) {
+      grid-template-columns: 1fr 1fr;
+      .item {
+        margin: 1rem 0;
+      }
+    }
+    @include media(520px) {
+      grid-template-columns: 1fr;
+    }
+  }
+  .listed {
+    ul {
+      list-style-type: disc;
+      padding: 1rem;
+      place-self: center;
+      font-size: 14px;
+      color: darken($accentColor, 70%);
+    }
+  }
+  .coloured .flexWrap .item {
+    width: 300px;
+    &:nth-child(2) .icon { background-color: #7272d1; }
+    &:nth-child(4) .icon { background-color: rgb(175, 57, 57); }
+    .flex {
+      @include flex(flex-start, center);
+      flex-direction: column;
+      a {
+        color: #333;
       }
     }
   }

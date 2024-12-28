@@ -1,0 +1,36 @@
+@import "./presets";
+
+.spinner-wrapper {
+  @include flex(center, center);
+  height: 200px; /* Adjust size as needed */
+  position: relative;
+}
+
+.spinner {
+  width: 150px; /* Spinner size */
+  height: 150px;
+  border: 4px solid #bbb;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  border-top: 4px solid #7aaa32;
+  position: relative;
+
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}
+
+.percentage-text {
+  position: absolute; /* Keeps the text centered and independent of the spinner */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Center the text */
+  font-size: 1.5rem;
+  color: darken($accentColor, 25%);
+  font-weight: bold;
+}
