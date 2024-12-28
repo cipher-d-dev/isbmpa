@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "../css/NavBar.css";
 import logo from "../assets/logo.png";
+import logoGhana from "../assets/logo-ghana.png";
 import { Link, NavigateFunction, useLocation, useNavigate } from "react-router-dom";
 
 interface NavBarProps {
@@ -134,7 +135,9 @@ const NavBar: React.FC<NavBarProps> = ({ navOpen, setnavOpen }) => {
         </li>
       </ul>
       <div className="flexWrap">
-        <Link to={"/contact-us"}>Get in Touch</Link>
+        <div className="logo">
+          <img src={logoGhana} alt="" />
+        </div>
         <div
           style={{ cursor: "pointer" }}
           onClick={() => setnavOpen((prev: boolean) => !prev)}

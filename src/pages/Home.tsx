@@ -25,7 +25,7 @@ const Home: React.FC = () => {
         <div className="description">
           <h1>
             The Institute Of Strategic Business Management And Public
-            Administration Ghana
+            Administration Ghana (ISBMPA)
           </h1>
           <p>
             The Institute of Strategic Business Management and Public
