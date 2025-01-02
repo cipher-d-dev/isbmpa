@@ -45,6 +45,20 @@ nav ul > .logo span {
     font-size: 12px;
   }
 }
+nav .logo p,
+nav ul > .logo p {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+}
+nav .logo p span,
+nav ul > .logo p span {
+  width: 100%;
+  text-align: center;
+  font-size: 12px;
+}
 nav .ghana {
   display: none;
 }
@@ -154,7 +168,7 @@ nav #overlay {
     padding: 0.9rem;
   }
   nav .logo {
-    flex-basis: 85% !important;
+    flex-basis: 93% !important;
   }
 }
 @media screen and (max-width: 1280px) {
@@ -210,6 +224,7 @@ nav #overlay {
     flex-direction: row-reverse;
   }
   nav .ghana {
+    width: 85px !important;
     display: flex;
   }
   nav #overlay {
@@ -226,10 +241,19 @@ nav #overlay {
   }
   nav .logo {
     justify-content: flex-start;
-    flex-basis: 80%;
+    flex-basis: 100%;
   }
-  nav .logo span {
+  nav .logo p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
     width: 100%;
+  }
+  nav .logo p span {
+    width: 100%;
+    text-align: center;
+    font-size: 12px;
   }
   nav .flexWrap > .logo {
     display: none;

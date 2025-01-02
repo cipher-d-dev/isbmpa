@@ -53,10 +53,15 @@ const NavBar: React.FC<NavBarProps> = ({ navOpen, setnavOpen }) => {
         <div className="imgWrap">
           <img src={logo} alt="" />
         </div>
-        <span>
+        <p>
+          <span>
           The Institute Of Strategic Business Management And Public
-          Administration Ghana (ISBMPA)
-        </span>
+          Administration Ghana
+          </span>
+          <span>
+            ISBMPA
+          </span>
+        </p>
         <div className="imgWrap ghana">
           <img src={logoGhana} alt="" />
         </div>
