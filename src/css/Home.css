@@ -24,7 +24,7 @@ section header .description h1 {
 }
 section header .description a {
   text-decoration: none;
-  font-family: "DM Sans", sans-serif;
+  font-family: "DM Sans 14pt", "Poppins", sans-serif;
   background-color: #3CC68A;
   color: #fff;
   padding: 0.8rem 1.7rem;
