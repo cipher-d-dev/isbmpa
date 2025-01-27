@@ -126,7 +126,7 @@ section {
             font-size: 18px;
             margin: 0.3rem 0;
           }
-          p {
+          p, &>div {
             font-size: 15px;
             line-height: 25px;
           }
@@ -276,6 +276,17 @@ section {
       place-self: center;
       font-size: 14px;
       color: darken($accentColor, 70%);
+      li {
+        margin: .5rem auto;
+        font-size: 14px;
+        background: #EEE;
+        padding: .4rem;
+        &:hover {
+          background: #444;
+          color: #FFF;
+          transition: .2s linear;
+        }
+      }
     }
   }
   .coloured .flexWrap .item {

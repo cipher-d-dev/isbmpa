@@ -138,7 +138,7 @@ section .intro .flexWrap .item > div:nth-child(2) h2 {
   font-size: 18px;
   margin: 0.3rem 0;
 }
-section .intro .flexWrap .item > div:nth-child(2) p {
+section .intro .flexWrap .item > div:nth-child(2) p, section .intro .flexWrap .item > div:nth-child(2) > div {
   font-size: 15px;
   line-height: 25px;
 }
@@ -298,6 +298,17 @@ section .listed ul {
   place-self: center;
   font-size: 14px;
   color: black;
+}
+section .listed ul li {
+  margin: 0.5rem auto;
+  font-size: 14px;
+  background: #EEE;
+  padding: 0.4rem;
+}
+section .listed ul li:hover {
+  background: #444;
+  color: #FFF;
+  transition: 0.2s linear;
 }
 section .coloured .flexWrap .item {
   width: 300px;
