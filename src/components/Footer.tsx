@@ -52,14 +52,14 @@ const Footer: React.FC = () => {
         </div>
         <p>
           <span>&copy; 2024 Copyright ISBMPA, All Rights Reserved</span>
-          <p>
+          <div>
             <Link to={"https://facebook.com"}>
               <FontAwesomeIcon icon={faFacebook} />
             </Link>
             <Link to={"https://twitter.com"}>
               <FontAwesomeIcon icon={faXTwitter} />
             </Link>
-          </p>
+          </div>
         </p>
       </div>
     </footer>

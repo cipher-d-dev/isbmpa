@@ -16,9 +16,11 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import Spinner from "../components/Spinner";
 import Footer from "../components/Footer";
+import generateImageBlock from "../components/Block";
 
 const Home: React.FC = () => {
   const [percentage, setPercentage] = useState<number>(95);
+  const [element, setElement] = useState(generateImageBlock([], 2));
 
   return (
     <section>
@@ -128,32 +130,7 @@ const Home: React.FC = () => {
           institution toward excellence and fostering innovation for a brighter
           future
         </p>
-        <div className="flexImages">
-          <div className="item">
-            <div className="image">
-              <img src="https://i.pravatar.cc/300?img=1" alt="" />
-            </div>
-            <p className="description">Jane Doe</p>
-          </div>
-          <div className="item">
-            <div className="image">
-              <img src="https://i.pravatar.cc/300?img=5" alt="" />
-            </div>
-            <p className="description">Millan Perry</p>
-          </div>
-          <div className="item">
-            <div className="image">
-              <img src="https://i.pravatar.cc/300?img=12" alt="" />
-            </div>
-            <p className="description">John Kraat</p>
-          </div>
-          <div className="item">
-            <div className="image">
-              <img src="https://i.pravatar.cc/300?img=13" alt="" />
-            </div>
-            <p className="description">Max Grim</p>
-          </div>
-        </div>
+        <div className="flexImages">{generateImageBlock()}</div>
       </section>
       <section className="intro about listed">
         <p>Our Team</p>
@@ -162,23 +139,38 @@ const Home: React.FC = () => {
           academics who bring a wealth of experience to the table.
         </p>
         <ul>
-          <li>Dr. Jane Doe</li>
-          <li>Dr. Millan Perry</li>
-          <li>Hon. John Kraat</li>
-          <li>Mr. Max Grim</li>
+          <li>
+            DR. Eric Addo Afful - Vice President / Chairman Governing Council
+          </li>
+          <li>DR. Ani Freeman, CF.PRMP - Country Director (NIgeria)</li>
+          <li>DR. Obeng Akotua - Registrar / CEO</li>
+          <li>DR. (MRS) Josephine C. Egbuta</li>
+          <li>DR. (BABR) Opeyemi Aladetola</li>
+          <li>MR. Austine Sozah Jeremiah</li>
+          <li>MR. Indogesit Usenideh</li>
+          <li>MS. Precious Freeman</li>
+          <li>REV (DR) James Avelji</li>
         </ul>
         <Spinner percentage={percentage} setPercentage={setPercentage} />
         <div className="learnMore">
           <Link to={"/our-team"}>Check Out Our Team</Link>
         </div>
       </section>
-      <section className="intro animated">
-        <p>Awards</p>
-        <p>Check Out All ISBMPA Awards</p>
-        <h3 style={{ textAlign: "center" }}>
+      <section className="intro about imageDescribe">
+        <p>Awards / Gallery</p>
+        <p>
+          Check Out All ISBMPA Awards
           <FontAwesomeIcon icon={faTrophy} />
-          &nbsp; This section is coming soon....
-        </h3>
+        </p>
+        <div className="flexImages">{element}</div>
+        <div
+          className="learnMore"
+          onClick={() => setElement(generateImageBlock([], 2))}
+        >
+          <Link onClick={(e) => e.preventDefault()} to={"#"}>
+            Load More
+          </Link>
+        </div>
       </section>
       <section className="intro coloured">
         <p>Reach Out To Us</p>
@@ -223,7 +215,7 @@ const Home: React.FC = () => {
             </div>
             <div>
               <h2>Email Us</h2>
-              <p>
+              <div>
                 Drop an email at:{" "}
                 <div className="flex">
                   <a href="mailto:fellow@isbmpa.com">fellow@isbmpa.com</a>
@@ -232,7 +224,7 @@ const Home: React.FC = () => {
                     drfreeman.isbmpa@yahoo.com
                   </a>
                 </div>
-              </p>
+              </div>
             </div>
           </div>
         </div>

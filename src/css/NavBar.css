@@ -120,6 +120,7 @@ nav .flexWrap .logo img {
 }
 nav .hamburgerWrap {
   transition: 0.3s linear;
+  margin-right: 2rem;
 }
 nav .hamburger {
   height: 2px;

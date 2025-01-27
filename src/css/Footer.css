@@ -71,13 +71,13 @@ footer .footerMain > p {
   align-items: center;
   justify-content: center;
 }
-footer .footerMain > p p {
+footer .footerMain > p div {
   margin: 0 0.3rem;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-footer .footerMain > p p a {
+footer .footerMain > p div a {
   color: #343d48;
   margin: 0 0.3rem;
 }

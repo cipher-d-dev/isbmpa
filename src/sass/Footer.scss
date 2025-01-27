@@ -51,7 +51,7 @@ footer {
             color: #343d48;
             font-size: 15px;
             @include flex(center, center);
-            p {
+            div {
                 margin: 0 .3rem;
                 @include flex(center, center);
                 a {
