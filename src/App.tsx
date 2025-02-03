@@ -10,6 +10,7 @@ import Gallery from "./pages/Gallery";
 import OurTeam from "./pages/OurTeam";
 import GoverningCouncil from "./pages/GoverningCouncil";
 import { useState } from "react";
+import NotFound from "./pages/404";
 
 function App() {
   const [navOpen, setnavOpen] = useState<boolean>(false);
@@ -29,6 +30,7 @@ function App() {
             <Route path="gallery" element={<Gallery />} />
             <Route path="our-team" element={<OurTeam />} />
             <Route path="governing-council" element={<GoverningCouncil />} />
+            <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>
       </Router>
