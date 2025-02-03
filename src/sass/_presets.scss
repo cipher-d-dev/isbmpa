@@ -1,21 +1,22 @@
-$font: "DM Sans 14pt", "Poppins", sans-serif;
-$accentColor: #3CC68A;
-$txtColor: #02073E;
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap");
+$font: "DM Sans", "DM Sans 14pt", "Poppins", sans-serif;
+$accentColor: #3cc68a;
+$txtColor: #02073e;
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 @mixin flex($al, $js) {
-    display: flex;
-    align-items: $al;
-    justify-content: $js;
+  display: flex;
+  align-items: $al;
+  justify-content: $js;
 }
 
 @mixin media($px) {
-    @media screen and (max-width: $px) {
-        @content;
-    }
+  @media screen and (max-width: $px) {
+    @content;
+  }
 }
