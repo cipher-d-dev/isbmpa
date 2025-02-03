@@ -106,19 +106,6 @@ const NavBar: React.FC<NavBarProps> = ({ navOpen, setnavOpen }) => {
         <li
           onClick={() => {
             setnavOpen(false);
-            navigate("/fellowship-awards");
-          }}
-        >
-          <Link
-            to="/fellowship-awards"
-            className={isActive("/fellowship-awards")}
-          >
-            Fellowship Awards
-          </Link>
-        </li>
-        <li
-          onClick={() => {
-            setnavOpen(false);
             navigate("/governing-council");
           }}
         >

@@ -8,7 +8,6 @@ import ContactUs from "./pages/ContactUs";
 import "./css/App.css";
 import Gallery from "./pages/Gallery";
 import OurTeam from "./pages/OurTeam";
-import FellowshipAwards from "./pages/FellowshipAwards";
 import GoverningCouncil from "./pages/GoverningCouncil";
 import { useState } from "react";
 
@@ -29,7 +28,6 @@ function App() {
             <Route path="contact-us" element={<ContactUs />} />
             <Route path="gallery" element={<Gallery />} />
             <Route path="our-team" element={<OurTeam />} />
-            <Route path="fellowship-awards" element={<FellowshipAwards />} />
             <Route path="governing-council" element={<GoverningCouncil />} />
           </Route>
         </Routes>

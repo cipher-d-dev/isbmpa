@@ -87,7 +87,6 @@ const generateImageBlock = (randoms: number[] = [], randomInt: number = 1) => {
         <div className="image">
           <img src={image} alt={`Gallery Image ${number}`} />
         </div>
-        <p className="description">Council</p>
       </div>
     );
   });
