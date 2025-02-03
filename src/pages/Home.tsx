@@ -140,14 +140,14 @@ const Home: React.FC = () => {
         </p>
         <ul>
           <li>
-            DR. Eric Addo Afful - Vice President / Chairman Governing Council
+            Prof. Eric Addo Afful - Vice President / Chairman Governing Council
           </li>
-          <li>DR. Ani Freeman, CF.PRMP - Country Director (NIgeria)</li>
+          <li>DR. Ani Freeman - Country Director (Nigeria)</li>
           <li>DR. Obeng Akotua - Registrar / CEO</li>
           <li>DR. (MRS) Josephine C. Egbuta</li>
-          <li>DR. (BABR) Opeyemi Aladetola</li>
+          <li>DR. (Barrister) Opeyemi Aladetola</li>
           <li>MR. Austine Sozah Jeremiah</li>
-          <li>MR. Indogesit Usenideh</li>
+          <li>MR. Idogesit Usenideh</li>
           <li>MS. Precious Freeman</li>
           <li>REV (DR) James Avelji</li>
         </ul>
@@ -157,9 +157,9 @@ const Home: React.FC = () => {
         </div>
       </section>
       <section className="intro about imageDescribe">
-        <p>Awards / Gallery</p>
+        <h1 style={{textAlign: "center"}}>Gallery</h1>
         <p>
-          Check Out All ISBMPA Awards
+          Check Out The ISBMPA Gallery
           <FontAwesomeIcon icon={faTrophy} />
         </p>
         <div className="flexImages">{element}</div>
