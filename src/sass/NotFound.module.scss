@@ -1,0 +1,98 @@
+// Color Variables
+$primary-color: #007bff;
+$hover-color: #0056b3;
+$background-color: #f8f9fa;
+$text-color: #333;
+$secondary-text-color: #555;
+
+// Responsive mixins
+@mixin mobile {
+  @media (max-width: 600px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (max-width: 900px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: 901px) {
+    @content;
+  }
+}
+
+// Main container
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+  background-color: $background-color;
+  color: $text-color;
+  padding: 20px;
+
+  @include mobile {
+    padding: 15px;
+    height: auto;
+    min-height: 100vh;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+    margin: 20px 0;
+
+    @include mobile {
+      font-size: 2rem;
+    }
+  }
+
+  p {
+    font-size: 1.2rem;
+    color: $secondary-text-color;
+    max-width: 500px;
+
+    @include mobile {
+      font-size: 1rem;
+      max-width: 90%;
+    }
+  }
+
+  // Image styling
+  .image {
+    max-width: 100%;
+    height: auto;
+    max-height: 350px;
+    margin-bottom: 20px;
+
+    @include mobile {
+      max-height: 250px;
+    }
+  }
+
+  // Button styling
+  .button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 24px;
+    background: $primary-color;
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    border-radius: 5px;
+    transition: 0.3s ease-in-out;
+
+    &:hover {
+      background: $hover-color;
+    }
+
+    @include mobile {
+      padding: 10px 20px;
+      font-size: 0.9rem;
+    }
+  }
+}
