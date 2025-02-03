@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -14,7 +15,7 @@ section header {
   padding-top: 100px;
 }
 section header .description {
-  color: #02073E;
+  color: #02073e;
   line-height: 40px;
   flex-basis: 50%;
 }
@@ -24,8 +25,8 @@ section header .description h1 {
 }
 section header .description a {
   text-decoration: none;
-  font-family: "DM Sans 14pt", "Poppins", sans-serif;
-  background-color: #3CC68A;
+  font-family: "DM Sans", "DM Sans 14pt", "Poppins", sans-serif;
+  background-color: #3cc68a;
   color: #fff;
   padding: 0.8rem 1.7rem;
   border-radius: 10px;
@@ -112,7 +113,7 @@ section .intro > p:nth-child(2) {
   text-align: center;
   font-weight: 400;
   font-size: 16px;
-  color: #02073E;
+  color: #02073e;
 }
 section .intro .flexWrap {
   display: flex;
@@ -143,7 +144,7 @@ section .intro .flexWrap .item > div:nth-child(2) p, section .intro .flexWrap .i
   line-height: 25px;
 }
 section .intro .flexWrap .item:nth-child(1) .icon {
-  background-color: #3CC68A;
+  background-color: #3cc68a;
 }
 section .intro .flexWrap .item:nth-child(2) .icon {
   background-color: #35b47d;

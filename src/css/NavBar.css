@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -104,7 +105,7 @@ nav ul li a:hover::after {
   width: 100%;
 }
 nav ul li a.isActive {
-  color: #3CC68A;
+  color: #3cc68a;
 }
 nav .flexWrap {
   display: flex;
@@ -181,7 +182,7 @@ nav #overlay {
     top: 0;
     width: 250px;
     background: #ddd;
-    border-right: 2px solid #3CC68A;
+    border-right: 2px solid #3cc68a;
     flex-direction: column;
     overflow-y: scroll;
     height: 100%;

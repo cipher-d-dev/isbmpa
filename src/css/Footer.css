@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -31,7 +32,7 @@ footer .footerFlex .item h2 {
   margin: 0.3rem 0;
 }
 footer .footerFlex .item a, footer .footerFlex .item p {
-  color: #02073E;
+  color: #02073e;
   text-decoration: none;
   margin: 0.4rem 0;
   font-size: 14px;
