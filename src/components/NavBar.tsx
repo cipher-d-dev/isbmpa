@@ -96,6 +96,16 @@ const NavBar: React.FC<NavBarProps> = ({ navOpen, setnavOpen }) => {
         <li
           onClick={() => {
             setnavOpen(false);
+            navigate("/awardees");
+          }}
+        >
+          <Link to="/awardees" className={isActive("/awardees")}>
+            Awardees ({new Date().getFullYear()})
+          </Link>
+        </li>
+        <li
+          onClick={() => {
+            setnavOpen(false);
             navigate("/our-team");
           }}
         >
