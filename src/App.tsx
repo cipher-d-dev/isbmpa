@@ -12,6 +12,7 @@ import GoverningCouncil from "./pages/GoverningCouncil";
 import { useState } from "react";
 import NotFound from "./pages/404";
 import ScrollToTop from "./components/ScrollToTop";
+import Awardees from "./pages/Awardees";
 
 function App() {
   const [navOpen, setnavOpen] = useState<boolean>(false);
@@ -32,6 +33,7 @@ function App() {
             <Route path="gallery" element={<Gallery />} />
             <Route path="our-team" element={<OurTeam />} />
             <Route path="governing-council" element={<GoverningCouncil />} />
+            <Route path="awardees" element={<Awardees />} />
             <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>
