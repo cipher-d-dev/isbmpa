@@ -6,7 +6,7 @@ import generateImageBlock from "../components/Block";
 import { Link } from "react-router-dom";
 
 const Gallery: React.FC = () => {
-  const [element, setElement] = useState(generateImageBlock([], 3));
+  const [element, setElement] = useState(generateImageBlock([], 12));
   return (
     <section style={{ paddingTop: "50px" }}>
       <section className="intro about imageDescribe">
@@ -18,7 +18,7 @@ const Gallery: React.FC = () => {
         <div className="flexImages">{element}</div>
         <div
           className="learnMore"
-          onClick={() => setElement(generateImageBlock([], 3))}
+          onClick={() => setElement(generateImageBlock([], 12))}
         >
           <Link onClick={(e) => e.preventDefault()} to={"#"}>
             Load More
