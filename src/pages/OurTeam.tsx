@@ -18,11 +18,12 @@ const OurTeam: React.FC = () => {
           <li>DR. Ani Freeman - Country Director (Nigeria)</li>
           <li>DR. Obeng Akotua - Registrar / CEO</li>
           <li>DR. (MRS) Josephine C. Egbuta</li>
-          <li>DR. (Barrister) Opeyemi Aladetola</li>
+          <li>BARR (DR.) OPEYEMI ALADETOLA</li>
           <li>MR. Austine Sozah Jeremiah</li>
-          <li>MR. Idogesit Usenideh</li>
+          <li>MR. Idongesit Usenideh</li>
           <li>MS. Precious Freeman</li>
           <li>REV (DR) James Avelji</li>
+          <li>MRS. Ekom Usenideh</li>
         </ul>
         <div className="learnMore">
           <Link to={"/"}>Go Back</Link>
