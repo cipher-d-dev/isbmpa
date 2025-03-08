@@ -11,6 +11,7 @@ import OurTeam from "./pages/OurTeam";
 import GoverningCouncil from "./pages/GoverningCouncil";
 import { useState } from "react";
 import NotFound from "./pages/404";
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   const [navOpen, setnavOpen] = useState<boolean>(false);
@@ -18,6 +19,7 @@ function App() {
   return (
     <div className={navOpen ? "condensedBody" : ""}>
       <Router>
+        <ScrollToTop />
         <Routes>
           {/* Public Routes */}
           <Route

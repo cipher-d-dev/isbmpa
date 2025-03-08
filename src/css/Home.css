@@ -261,8 +261,8 @@ section .flexImages .item .description {
   border-top: 2px solid #343d48;
   width: 100%;
   text-align: center;
-  padding: 0.5rem 0;
-  font-size: 15px;
+  padding: 0.5rem;
+  font-size: 12px;
   background-color: #333;
   color: #fff;
   height: -moz-fit-content;
@@ -290,6 +290,24 @@ section .flexImages .item:hover .description {
 }
 @media screen and (max-width: 520px) {
   section .flexImages {
+    grid-template-columns: 1fr;
+  }
+}
+section .bindedRow .flexImages {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  padding: 0 0.7rem;
+}
+@media screen and (max-width: 900px) {
+  section .bindedRow .flexImages {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (max-width: 600px) {
+  section .bindedRow .flexImages {
     grid-template-columns: 1fr;
   }
 }

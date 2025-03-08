@@ -243,8 +243,8 @@ section {
         border-top: 2px solid #343d48;
         width: 100%;
         text-align: center;
-        padding: 0.5rem 0;
-        font-size: 15px;
+        padding: 0.5rem;
+        font-size: 12px;
         background-color: #333;
         color: #fff;
         height: fit-content;
@@ -266,6 +266,22 @@ section {
       }
     }
     @include media(520px) {
+      grid-template-columns: 1fr;
+    }
+  }
+  .bindedRow .flexImages {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    padding: 0 .7rem;
+
+    @include media(900px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include media(600px) {
       grid-template-columns: 1fr;
     }
   }

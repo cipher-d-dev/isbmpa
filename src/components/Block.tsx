@@ -30,9 +30,34 @@ import pic29 from "../assets/gallery/pic (29).jpg";
 import pic30 from "../assets/gallery/pic (30).jpg";
 import pic31 from "../assets/gallery/pic (31).jpg";
 import pic32 from "../assets/gallery/pic (32).jpg";
+import pic33 from "../assets/gallery/pic (33).jpg";
+import pic34 from "../assets/gallery/pic (34).jpg";
+import pic35 from "../assets/gallery/pic (35).jpg";
+import pic36 from "../assets/gallery/pic (36).jpg";
+import pic37 from "../assets/gallery/pic (37).jpg";
+import pic38 from "../assets/gallery/pic (38).jpg";
+import pic39 from "../assets/gallery/pic (39).jpg";
+import pic40 from "../assets/gallery/pic (40).jpg";
+import pic41 from "../assets/gallery/pic (41).jpg";
+import pic42 from "../assets/gallery/pic (42).jpg";
+import pic43 from "../assets/gallery/pic (43).jpg";
+import pic44 from "../assets/gallery/pic (44).jpg";
+import pic45 from "../assets/gallery/pic (45).jpg";
+import pic46 from "../assets/gallery/pic (46).jpg";
+import pic47 from "../assets/gallery/pic (47).jpg";
+import pic48 from "../assets/gallery/pic (48).jpg";
+import pic49 from "../assets/gallery/pic (49).jpg";
+import pic50 from "../assets/gallery/pic (50).jpg";
+import pic51 from "../assets/gallery/pic (51).jpg";
+import pic52 from "../assets/gallery/pic (52).jpg";
+import pic53 from "../assets/gallery/pic (53).jpg";
+import pic54 from "../assets/gallery/pic (54).jpg";
+import pic55 from "../assets/gallery/pic (55).jpg";
 
 // Preload all images
-const imageMap: { [key: number]: string } = {
+const imageMap: {
+  [key: number]: string | { defaultImage: string; caption: string };
+} = {
   1: pic1,
   2: pic2,
   3: pic3,
@@ -65,30 +90,96 @@ const imageMap: { [key: number]: string } = {
   30: pic30,
   31: pic31,
   32: pic32,
+  33: pic33,
+  34: pic34,
+  35: pic35,
+  36: pic36,
+  37: pic37,
+  38: pic38,
+  39: {
+    defaultImage: pic39,
+    caption:
+      "COUNTRY DIRECTOR DR. ANI FREEMAN flanked by DR. (MRS) JOSEPHINE EGBUTA, BARR. (DR.) OPEYEMI ALADETOLA, AND OTHER MEMBERS OF THE ADVISORY BOARD",
+  },
+  40: pic40,
+  41: pic41,
+  42: pic42,
+  43: pic43,
+  44: pic44,
+  45: pic45,
+  46: pic46,
+  47: pic47,
+  48: pic48,
+  49: pic49,
+  50: pic50,
+  51: pic51,
+  52: pic52,
+  53: pic53,
+  54: {
+    defaultImage: pic54,
+    caption:
+      "VICE ADMIRAL DELE JOSEPH EZEOBA, RTD (Former Chief of Naval Staff)",
+  },
+  55: {
+    defaultImage: pic55,
+    caption:
+      "HIGH CHIEF EMMANUEL ODE OCHI, Chairman Middle Belt Traditional Council",
+  },
 };
 
-const generateImageBlock = (randoms: number[] = [], randomInt: number = 1) => {
-  let randomNumbers = [];
-  for (let i = 0; i < randomInt; i++) {
-    randomNumbers.push(
-      ...Array.from({ length: 4 }, () => Math.floor(Math.random() * 32) + 1)
-    );
+const generateImageBlock = (
+  randoms: number[] = [],
+  randomInt: number = 8,
+  onlyCaption = false
+) => {
+  let randomNumbers: number[] = [];
+  while (randomNumbers.length < randomInt) {
+    const randomNumber = Math.floor(Math.random() * 55) + 1;
+    if (!randomNumbers.includes(randomNumber)) {
+      randomNumbers.push(randomNumber);
+    }
   }
-  const numbersToUse = randoms.length === 0 ? randomNumbers : randoms;
+  let numbersToUse = randoms.length === 0 ? randomNumbers : randoms;
+
+  if (onlyCaption) {
+    numbersToUse = [];
+    Object.keys(imageMap).forEach((key) => {
+      const image = imageMap[parseInt(key)];
+      if (image && typeof image === "object" && "caption" in image) {
+        numbersToUse.push(parseInt(key));
+      }
+    });
+  }
+  console.log(numbersToUse);
 
   return numbersToUse.map((number, index) => {
-    const image = imageMap[number];
+    const image: any = imageMap[number];
     if (!image) {
       console.error(`Image not found for number: ${number}`);
       return null; // Handle missing images gracefully
     }
-    return (
-      <div className="item" key={index}>
-        <div className="image">
-          <img src={image} alt={`Gallery Image ${number}`} />
+
+    if (image.defaultImage || onlyCaption) {
+      const { defaultImage, caption } = image;
+      return (
+        <div className="item" key={index}>
+          <div className="image">
+            <img src={defaultImage} alt={`Gallery Image ${number}`} />
+          </div>
+          <p className="description">{caption}</p>
         </div>
-      </div>
-    );
+      );
+    }
+
+    if (!onlyCaption) {
+      return (
+        <div className="item" key={index}>
+          <div className="image">
+            <img src={image} alt={`Gallery Image ${number}`} />
+          </div>
+        </div>
+      );
+    }
   });
 };
 
