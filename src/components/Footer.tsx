@@ -3,9 +3,8 @@ import { Link } from "react-router-dom";
 import logo from "../assets/logo.png";
 import "../css/Footer.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import "../css/App.css"
+import "../css/App.css";
 import { faFacebook, faXTwitter } from "@fortawesome/free-brands-svg-icons";
-
 
 const Footer: React.FC = () => {
   return (
@@ -29,7 +28,7 @@ const Footer: React.FC = () => {
           <p>
             <a href="mailto:fellow@isbmpa.com">fellow@isbmpa.com</a>
           </p>
-          <p>+233 533441498</p>
+          <p>+233 245408582</p>
           <p>+234 8060427939</p>
           <p>+234 9077407568 </p>
         </div>
