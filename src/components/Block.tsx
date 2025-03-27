@@ -45,14 +45,6 @@ import pic44 from "../assets/gallery/pic (44).jpg";
 import pic45 from "../assets/gallery/pic (45).jpg";
 import pic46 from "../assets/gallery/pic (46).jpg";
 import pic47 from "../assets/gallery/pic (47).jpg";
-import pic48 from "../assets/gallery/pic (48).jpg";
-import pic49 from "../assets/gallery/pic (49).jpg";
-import pic50 from "../assets/gallery/pic (50).jpg";
-import pic51 from "../assets/gallery/pic (51).jpg";
-import pic52 from "../assets/gallery/pic (52).jpg";
-import pic53 from "../assets/gallery/pic (53).jpg";
-import pic54 from "../assets/gallery/pic (54).jpg";
-import pic55 from "../assets/gallery/pic (55).jpg";
 
 // Preload all images
 const imageMap: {
@@ -107,21 +99,13 @@ const imageMap: {
   43: pic43,
   44: pic44,
   45: pic45,
-  46: pic46,
-  47: pic47,
-  48: pic48,
-  49: pic49,
-  50: pic50,
-  51: pic51,
-  52: pic52,
-  53: pic53,
-  54: {
-    defaultImage: pic54,
+  46: {
+    defaultImage: pic46,
     caption:
       "VICE ADMIRAL DELE JOSEPH EZEOBA, RTD (Former Chief of Naval Staff)",
   },
-  55: {
-    defaultImage: pic55,
+  47: {
+    defaultImage: pic47,
     caption:
       "HIGH CHIEF EMMANUEL ODE OCHI, Chairman Middle Belt Traditional Council",
   },
