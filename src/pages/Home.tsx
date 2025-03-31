@@ -205,7 +205,7 @@ const Home: React.FC = () => {
             <div>
               <h2>Give Us A Call</h2>
               <p>
-                You can always phone us on: +233533441498 +2348060427939
+                You can always phone us on: +233 245408582 +2348060427939
                 +2349077407568
               </p>
             </div>
