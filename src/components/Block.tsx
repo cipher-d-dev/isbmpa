@@ -43,8 +43,6 @@ import pic42 from "../assets/gallery/pic (42).jpg";
 import pic43 from "../assets/gallery/pic (43).jpg";
 import pic44 from "../assets/gallery/pic (44).jpg";
 import pic45 from "../assets/gallery/pic (45).jpg";
-import pic46 from "../assets/gallery/pic (46).jpg";
-import pic47 from "../assets/gallery/pic (47).jpg";
 
 // Preload all images
 const imageMap: {
@@ -66,7 +64,11 @@ const imageMap: {
   14: pic14,
   15: pic15,
   16: pic16,
-  17: pic17,
+  17: {
+    defaultImage: pic17,
+    caption:
+      "COUNTRY DIRECTOR DR. ANI FREEMAN flanked by DR. (MRS) JOSEPHINE EGBUTA, BARR. (DR.) OPEYEMI ALADETOLA, AND OTHER MEMBERS OF THE ADVISORY BOARD",
+  },
   18: pic18,
   19: pic19,
   20: pic20,
@@ -88,24 +90,18 @@ const imageMap: {
   36: pic36,
   37: pic37,
   38: pic38,
-  39: {
-    defaultImage: pic39,
-    caption:
-      "COUNTRY DIRECTOR DR. ANI FREEMAN flanked by DR. (MRS) JOSEPHINE EGBUTA, BARR. (DR.) OPEYEMI ALADETOLA, AND OTHER MEMBERS OF THE ADVISORY BOARD",
-  },
+  39: pic39,
   40: pic40,
   41: pic41,
   42: pic42,
   43: pic43,
-  44: pic44,
-  45: pic45,
-  46: {
-    defaultImage: pic46,
+  44: {
+    defaultImage: pic44,
     caption:
       "VICE ADMIRAL DELE JOSEPH EZEOBA, RTD (Former Chief of Naval Staff)",
   },
-  47: {
-    defaultImage: pic47,
+  45: {
+    defaultImage: pic45,
     caption:
       "HIGH CHIEF EMMANUEL ODE OCHI, Chairman Middle Belt Traditional Council",
   },
