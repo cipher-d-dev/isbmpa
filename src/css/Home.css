@@ -222,93 +222,51 @@ section .about .flexWrap .item .icon img {
   }
 }
 section .flexImages {
-  display: grid;
-  place-content: center;
-  width: 100%;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  margin: 2rem 0 1rem 0;
+  -moz-column-count: 4;
+       column-count: 4; /* Number of columns */
+  -moz-column-gap: 16px;
+       column-gap: 16px;
+  padding: 20px;
 }
 section .flexImages .item {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  border-radius: 13px;
-  border: 2px dashed #bbb;
-  place-self: center;
+  display: inline-block;
+  background: #fff;
+  margin-bottom: 16px;
+  width: 100%;
+  border-radius: 8px;
   overflow: hidden;
-  width: -moz-fit-content;
-  width: fit-content;
-  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   position: relative;
-  height: auto;
-  transition: height 0.3s linear;
-}
-section .flexImages .item .image {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: 0.3s linear;
-  width: 250px;
 }
 section .flexImages .item .image img {
   width: 100%;
-  transition: 0.3s linear;
-  height: 100%;
+  height: auto;
+  display: block;
+  border-bottom: 1px solid #eee;
 }
 section .flexImages .item .description {
-  transition: opacity 0.3s ease-in-out;
-  border-top: 2px solid #343d48;
-  width: 100%;
-  text-align: center;
-  padding: 0.5rem;
-  font-size: 12px;
-  background-color: #333;
-  color: #fff;
-  height: -moz-fit-content;
-  height: fit-content;
-}
-section .flexImages .item:hover {
-  height: -moz-fit-content;
-  height: fit-content;
-}
-section .flexImages .item:hover .description {
   position: absolute;
-  height: 100%;
-  background: rgba(51, 51, 51, 0.3960784314);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  padding: 10px;
+  font-size: 14px;
+  opacity: 1;
+  font-weight: 500;
+  line-height: 22.5px;
 }
-@media screen and (max-width: 1100px) {
+@media screen and (max-width: 750px) {
   section .flexImages {
-    grid-template-columns: 1fr 1fr;
-  }
-  section .flexImages .item {
-    margin: 1rem 0;
+    -moz-column-count: 3;
+         column-count: 3;
   }
 }
-@media screen and (max-width: 520px) {
+@media screen and (max-width: 540px) {
   section .flexImages {
-    grid-template-columns: 1fr;
-  }
-}
-section .bindedRow .flexImages {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1rem;
-  justify-content: center;
-  align-items: center;
-  padding: 0 0.7rem;
-}
-@media screen and (max-width: 900px) {
-  section .bindedRow .flexImages {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-@media screen and (max-width: 600px) {
-  section .bindedRow .flexImages {
-    grid-template-columns: 1fr;
+    -moz-column-count: 2;
+         column-count: 2;
   }
 }
 section .listed ul {
@@ -321,12 +279,12 @@ section .listed ul {
 section .listed ul li {
   margin: 0.5rem auto;
   font-size: 14px;
-  background: #EEE;
+  background: #eee;
   padding: 0.4rem;
 }
 section .listed ul li:hover {
   background: #444;
-  color: #FFF;
+  color: #fff;
   transition: 0.2s linear;
 }
 section .coloured .flexWrap .item {
