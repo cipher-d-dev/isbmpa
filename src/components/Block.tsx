@@ -43,6 +43,54 @@ import pic42 from "../assets/gallery/pic (42).jpg";
 import pic43 from "../assets/gallery/pic (43).jpg";
 import pic44 from "../assets/gallery/pic (44).jpg";
 import pic45 from "../assets/gallery/pic (45).jpg";
+import pic46 from "../assets/gallery/pic (46).jpg";
+import pic47 from "../assets/gallery/pic (47).jpg";
+import pic48 from "../assets/gallery/pic (48).jpg";
+import pic49 from "../assets/gallery/pic (49).jpg";
+import pic50 from "../assets/gallery/pic (50).jpg";
+import pic51 from "../assets/gallery/pic (51).jpeg";
+import pic52 from "../assets/gallery/pic (52).jpeg";
+import pic53 from "../assets/gallery/pic (53).jpeg";
+import pic54 from "../assets/gallery/pic (54).jpeg";
+import pic55 from "../assets/gallery/pic (55).jpeg";
+import pic56 from "../assets/gallery/pic (56).jpeg";
+import pic57 from "../assets/gallery/pic (57).jpeg";
+import pic58 from "../assets/gallery/pic (58).jpeg";
+import pic59 from "../assets/gallery/pic (59).jpeg";
+import pic60 from "../assets/gallery/pic (60).jpeg";
+import pic61 from "../assets/gallery/pic (61).jpeg";
+import pic62 from "../assets/gallery/pic (62).jpeg";
+import pic63 from "../assets/gallery/pic (63).jpeg";
+import pic64 from "../assets/gallery/pic (64).jpeg";
+import pic65 from "../assets/gallery/pic (65).jpeg";
+import pic66 from "../assets/gallery/pic (66).jpeg";
+import pic67 from "../assets/gallery/pic (67).jpeg";
+import pic68 from "../assets/gallery/pic (68).jpeg";
+import pic69 from "../assets/gallery/pic (69).jpeg";
+import pic70 from "../assets/gallery/pic (70).jpeg";
+import pic71 from "../assets/gallery/pic (71).jpeg";
+import pic72 from "../assets/gallery/pic (72).jpeg";
+import pic73 from "../assets/gallery/pic (73).jpeg";
+import pic74 from "../assets/gallery/pic (74).jpeg";
+import pic75 from "../assets/gallery/pic (75).jpeg";
+import pic76 from "../assets/gallery/pic (76).jpeg";
+import pic77 from "../assets/gallery/pic (77).jpeg";
+import pic78 from "../assets/gallery/pic (78).jpeg";
+import pic79 from "../assets/gallery/pic (79).jpeg";
+import pic80 from "../assets/gallery/pic (80).jpeg";
+import pic81 from "../assets/gallery/pic (81).jpeg";
+import pic82 from "../assets/gallery/pic (82).jpeg";
+import pic83 from "../assets/gallery/pic (83).jpeg";
+import pic84 from "../assets/gallery/pic (84).jpeg";
+import pic85 from "../assets/gallery/pic (85).jpeg";
+import pic86 from "../assets/gallery/pic (86).jpeg";
+import pic87 from "../assets/gallery/pic (87).jpeg";
+import pic88 from "../assets/gallery/pic (88).jpeg";
+import pic89 from "../assets/gallery/pic (89).jpeg";
+import pic90 from "../assets/gallery/pic (90).jpeg";
+import pic91 from "../assets/gallery/pic (91).jpeg";
+import pic92 from "../assets/gallery/pic (92).jpeg";
+import pic93 from "../assets/gallery/pic (93).jpeg";
 
 // Preload all images
 const imageMap: {
@@ -105,6 +153,73 @@ const imageMap: {
     caption:
       "HIGH CHIEF EMMANUEL ODE OCHI, Chairman Middle Belt Traditional Council",
   },
+  46: pic46,
+  47: pic47,
+  48: pic48,
+  49: pic49,
+  50: pic50,
+  51: pic51,
+  52: pic52,
+  53: pic53,
+  54: pic54,
+  55: pic55,
+  56: pic56,
+  57: pic57,
+  58: pic58,
+  59: pic59,
+  60: pic60,
+  61: pic61,
+  62: pic62,
+  63: pic63,
+  64: pic64,
+  65: pic65,
+  66: pic66,
+  67: pic67,
+  68: pic68,
+  69: pic69,
+  70: pic70,
+  71: pic71,
+  72: pic72,
+  73: pic73,
+  74: pic74,
+  75: pic75,
+  76: pic76,
+  77: pic77,
+  78: pic78,
+  79: pic79,
+  80: pic80,
+  81: pic81,
+  82: pic82,
+  83: pic83,
+  84: pic84,
+  85: pic85,
+  86: pic86,
+  87: pic87,
+  88: pic88,
+  89: {
+    defaultImage: pic89,
+    caption:
+      "DR. IGHORODE OGHENERUKEVWE FRANK, FOUNDER RUKKY MULTINATIONAL ENT. ACCRA GHANA (PATRON)",
+  },
+  90: {
+    defaultImage: pic90,
+    caption:
+      "DR. EMMANUEL OJIBO, MD/CEO ACHIEVING GREATNESS LTD, LAGOS (PATRON)",
+  },
+  91: {
+    defaultImage: pic91,
+    caption:
+      "COMRADE (DR) BOBBOI BALA KAIGAMA, ICON OF LABOUR MOVEMENT IN NIGERIA (PATRON)",
+  },
+  92: {
+    defaultImage: pic92,
+    caption: "GENERAL CHRISTOPHER GWABIN MUSA, CHIEF OF DEFENCE STAFF (PATRON)",
+  },
+  93: {
+    defaultImage: pic93,
+    caption:
+      "AMB.(DR) ADEBOYE OLUWASEUN AMOS, MD/CEO LINCOLN CITY PROPERTY (PATRON)",
+  },
 };
 
 const generateImageBlock = (
@@ -114,7 +229,7 @@ const generateImageBlock = (
 ) => {
   let randomNumbers: number[] = [];
   while (randomNumbers.length < randomInt) {
-    const randomNumber = Math.floor(Math.random() * 55) + 1;
+    const randomNumber = Math.floor(Math.random() * 87) + 1;
     if (!randomNumbers.includes(randomNumber)) {
       randomNumbers.push(randomNumber);
     }

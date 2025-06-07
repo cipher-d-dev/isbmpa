@@ -126,7 +126,8 @@ section {
             font-size: 18px;
             margin: 0.3rem 0;
           }
-          p, &>div {
+          p,
+          & > div {
             font-size: 15px;
             line-height: 25px;
           }
@@ -211,78 +212,46 @@ section {
     }
   }
   .flexImages {
-    display: grid;
-    place-content: center;
-    width: 100%;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    margin: 2rem 0 1rem 0;
+
+    column-count: 4; /* Number of columns */
+    column-gap: 16px;
+    padding: 20px;
     .item {
-      @include flex(center, center);
-      flex-direction: column;
-      border-radius: 13px;
-      border: 2px dashed #bbb;
-      place-self: center;
+      display: inline-block;
+      background: #fff;
+      margin-bottom: 16px;
+      width: 100%;
+      border-radius: 8px;
       overflow: hidden;
-      width: fit-content;
-      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
       position: relative;
-      height: auto;
-      transition: height 0.3s linear;
       .image {
-        @include flex(center, center);
-        transition: 0.3s linear;
-        width: 250px;
         img {
           width: 100%;
-          transition: 0.3s linear;
-          height: 100%;
+          height: auto;
+          display: block;
+          border-bottom: 1px solid #eee;
         }
       }
       .description {
-        transition: opacity 0.3s ease-in-out;
-        border-top: 2px solid #343d48;
-        width: 100%;
-        text-align: center;
-        padding: 0.5rem;
-        font-size: 12px;
-        background-color: #333;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: rgba(0,0,0,0.6);
         color: #fff;
-        height: fit-content;
-      }
-      &:hover {
-        height: fit-content;
-        .description {
-          position: absolute;
-          height: 100%;
-          background: #33333365;
-          @include flex(center, center);
-        }
+        padding: 10px;
+        font-size: 14px;
+        opacity: 1;
+        font-weight: 500;
+        line-height: 22.5px;
       }
     }
-    @include media(1100px) {
-      grid-template-columns: 1fr 1fr;
-      .item {
-        margin: 1rem 0;
-      }
+    @include media(750px) {
+      column-count: 3;
     }
-    @include media(520px) {
-      grid-template-columns: 1fr;
-    }
-  }
-  .bindedRow .flexImages {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1rem;
-    justify-content: center;
-    align-items: center;
-    padding: 0 .7rem;
-
-    @include media(900px) {
-      grid-template-columns: repeat(2, 1fr);
-    }
-
-    @include media(600px) {
-      grid-template-columns: 1fr;
+    @include media(540px) {
+      column-count: 2;
     }
   }
   .listed {
@@ -293,22 +262,26 @@ section {
       font-size: 14px;
       color: darken($accentColor, 70%);
       li {
-        margin: .5rem auto;
+        margin: 0.5rem auto;
         font-size: 14px;
-        background: #EEE;
-        padding: .4rem;
+        background: #eee;
+        padding: 0.4rem;
         &:hover {
           background: #444;
-          color: #FFF;
-          transition: .2s linear;
+          color: #fff;
+          transition: 0.2s linear;
         }
       }
     }
   }
   .coloured .flexWrap .item {
     width: 300px;
-    &:nth-child(2) .icon { background-color: #7272d1; }
-    &:nth-child(4) .icon { background-color: rgb(175, 57, 57); }
+    &:nth-child(2) .icon {
+      background-color: #7272d1;
+    }
+    &:nth-child(4) .icon {
+      background-color: rgb(175, 57, 57);
+    }
     .flex {
       @include flex(flex-start, center);
       flex-direction: column;

@@ -20,7 +20,7 @@ import generateImageBlock from "../components/Block";
 
 const Home: React.FC = () => {
   const [percentage, setPercentage] = useState<number>(95);
-  const [element, setElement] = useState(generateImageBlock([], 2));
+  const [element, setElement] = useState(generateImageBlock());
 
   return (
     <section>
@@ -144,9 +144,7 @@ const Home: React.FC = () => {
           </li>
           <li>DR. Ani Freeman - Country Director (Nigeria)</li>
           <li>DR. Obeng Akotua - Registrar / CEO</li>
-          <li>DR. (MRS) Josephine C. Egbuta</li>
-          <li>BARR (DR.) OPEYEMI ALADETOLA</li>
-          <li>MR. Austine Sozah Jeremiah</li>
+          <li>Barr (DR.) OPEYEMI ALADETOLA</li>
           <li>MR. Idongesit Usenideh</li>
           <li>MS. Precious Freeman</li>
           <li>REV (DR) James Avelji</li>
@@ -166,7 +164,7 @@ const Home: React.FC = () => {
         <div className="flexImages">{element}</div>
         <div
           className="learnMore"
-          onClick={() => setElement(generateImageBlock([], 8))}
+          onClick={() => setElement(generateImageBlock())}
         >
           <Link onClick={(e) => e.preventDefault()} to={"#"}>
             Load More
