@@ -91,6 +91,7 @@ import pic90 from "../assets/gallery/pic (90).jpeg";
 import pic91 from "../assets/gallery/pic (91).jpeg";
 import pic92 from "../assets/gallery/pic (92).jpeg";
 import pic93 from "../assets/gallery/pic (93).jpeg";
+import pic94 from "../assets/gallery/pic (94).jpeg";
 
 // Preload all images
 const imageMap: {
@@ -220,6 +221,11 @@ const imageMap: {
     caption:
       "AMB.(DR) ADEBOYE OLUWASEUN AMOS, MD/CEO LINCOLN CITY PROPERTY (PATRON)",
   },
+  94: {
+    defaultImage: pic94,
+    caption:
+      "DR. GBADEWOLE AMOS KAYODE, Vice President REDAN Abuja FCT as PATRON AND MEMBER GOVERNING COUNCIL",
+  },
 };
 
 const generateImageBlock = (
@@ -229,7 +235,7 @@ const generateImageBlock = (
 ) => {
   let randomNumbers: number[] = [];
   while (randomNumbers.length < randomInt) {
-    const randomNumber = Math.floor(Math.random() * 87) + 1;
+    const randomNumber = Math.floor(Math.random() * 94) + 1;
     if (!randomNumbers.includes(randomNumber)) {
       randomNumbers.push(randomNumber);
     }
