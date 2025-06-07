@@ -18,7 +18,7 @@ const OurTeam: React.FC = () => {
           <li>DR. Ani Freeman - Country Director (Nigeria)</li>
           <li>DR. Obeng Akotua - Registrar / CEO</li>
           <li>Prof. Godwin Michael Ezarafe - Executive Director Research and Training</li>
-          <li>Barr (DR.) OPEYEMI ALADETOLA</li>
+          <li>Barr (DR.) Opeyemi Aladetola</li>
           <li>MR. Idongesit Usenideh</li>
           <li>MS. Precious Freeman</li>
           <li>REV (DR) James Avelji</li>
