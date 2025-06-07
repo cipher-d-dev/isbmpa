@@ -265,8 +265,8 @@ section .flexImages .item .description {
 }
 @media screen and (max-width: 540px) {
   section .flexImages {
-    -moz-column-count: 2;
-         column-count: 2;
+    -moz-column-count: 1;
+         column-count: 1;
   }
 }
 section .listed ul {

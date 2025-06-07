@@ -251,7 +251,7 @@ section {
       column-count: 3;
     }
     @include media(540px) {
-      column-count: 2;
+      column-count: 1;
     }
   }
   .listed {
