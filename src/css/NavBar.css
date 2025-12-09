@@ -86,7 +86,7 @@ nav ul li a {
   transition: 0.3s linear;
 }
 nav ul li a:hover {
-  color: #35b47d;
+  color: rgb(52.5892857143, 179.9107142857, 124.5535714286);
 }
 nav ul li a::after {
   content: "";

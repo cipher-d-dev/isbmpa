@@ -49,18 +49,18 @@ const Footer: React.FC = () => {
           </div>
           <span>ISBMPA</span>
         </div>
-        <p>
+        <div>
           <span>&copy; 2024 Copyright ISBMPA, All Rights Reserved</span>
           <span style={{padding: "10px"}}>Powered by <a style={{color: "#4444b5"}} href="https://favesportfolio.vercel.app">Favitech Corporations</a></span>
-          <div>
+          <p>
             <Link to={"https://facebook.com"}>
               <FontAwesomeIcon icon={faFacebook} />
             </Link>
             <Link to={"https://twitter.com"}>
               <FontAwesomeIcon icon={faXTwitter} />
             </Link>
-          </div>
-        </p>
+          </p>
+        </div>
       </div>
     </footer>
   );

@@ -2,11 +2,14 @@ import React, { useState } from "react";
 import Footer from "../components/Footer";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBus } from "@fortawesome/free-solid-svg-icons";
-import generateImageBlock from "../components/Block";
 import { Link } from "react-router-dom";
+import GalleryPage from "../components/Block";
 
 const GoverningCouncil: React.FC = () => {
-  const [element, setElement] = useState(generateImageBlock([], 12, true));
+  const [gallery, generateGallery] = useState(
+    <GalleryPage onlyCaption={true} />
+  );
+
   return (
     <section style={{ paddingTop: "50px" }}>
       <section className="intro about imageDescribe bindedRow">
@@ -16,10 +19,10 @@ const GoverningCouncil: React.FC = () => {
           institution toward excellence and fostering innovation for a brighter
           future <FontAwesomeIcon icon={faBus} />
         </p>
-        <div className="flexImages">{element}</div>
+        <div className="flexMedia">{gallery}</div>
         <div
           className="learnMore"
-          onClick={() => setElement(generateImageBlock([], 12, true))}
+          onClick={() => generateGallery(<GalleryPage onlyCaption={true} />)}
         >
           <Link onClick={(e) => e.preventDefault()} to={"#"}>
             Load More

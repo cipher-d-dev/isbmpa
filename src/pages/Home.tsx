@@ -16,11 +16,16 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import Spinner from "../components/Spinner";
 import Footer from "../components/Footer";
-import generateImageBlock from "../components/Block";
+import GalleryPage from "../components/Block";
 
 const Home: React.FC = () => {
   const [percentage, setPercentage] = useState<number>(95);
-  const [element, setElement] = useState(generateImageBlock());
+  const [gallery, generateGallery] = useState(
+    <GalleryPage onlyCaption={false} />
+  );
+  const [governingCouncil, setGoverningCouncil] = useState(
+    <GalleryPage onlyCaption={true} limit={8} />
+  );
 
   return (
     <section>
@@ -130,7 +135,7 @@ const Home: React.FC = () => {
           institution toward excellence and fostering innovation for a brighter
           future
         </p>
-        <div className="flexImages">{generateImageBlock()}</div>
+        <div className="flexMedia">{governingCouncil}</div>
       </section>
       <section className="intro about listed">
         <p>Our Team</p>
@@ -144,7 +149,10 @@ const Home: React.FC = () => {
           </li>
           <li>DR. Ani Freeman - Country Director (Nigeria)</li>
           <li>DR. Obeng Akotua - Registrar / CEO</li>
-          <li>Prof. Godwin Michael Ezarafe - Executive Director Research and Training</li>
+          <li>
+            Prof. Godwin Michael Ezarafe - Executive Director Research and
+            Training
+          </li>
           <li>Barr (DR.) Opeyemi Aladetola</li>
           <li>MR. Idongesit Usenideh</li>
           <li>MS. Precious Freeman</li>
@@ -157,15 +165,15 @@ const Home: React.FC = () => {
         </div>
       </section>
       <section className="intro about imageDescribe">
-        <h1 style={{textAlign: "center"}}>Gallery</h1>
+        <h1 style={{ textAlign: "center" }}>Gallery</h1>
         <p>
           Check Out The ISBMPA Gallery
           <FontAwesomeIcon icon={faTrophy} />
         </p>
-        <div className="flexImages">{element}</div>
+        <div className="flexMedia">{gallery}</div>
         <div
           className="learnMore"
-          onClick={() => setElement(generateImageBlock())}
+          onClick={() => generateGallery(<GalleryPage onlyCaption={false} />)}
         >
           <Link onClick={(e) => e.preventDefault()} to={"#"}>
             Load More
