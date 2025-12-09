@@ -19,6 +19,20 @@ const Awardees: React.FC = () => {
           <li>Dr. Ifeoluwa Solomon Oladeji, DFD</li>
           <li>Dr. Ayodeji Olowoloba, DFD</li>
           <li>Dr. Giwa Damilare, DFD</li>
+          <li>Dr. Abraham Adeshile Great, DF & DFD</li>
+          <li>Dr. Oluwayemisi Oyenubi, DFD</li>
+          <li>Dr. Prisca Angwe, DFD</li>
+          <li>Dr. Chioma Margaret Oyebisi, DFD</li>
+          <li>Dr. Francis Adeyeye, DFD</li>
+          <li>Dr. Olalekan Oluwalonimi Oluyelu, DFD</li>
+          <li>Dr. Alexander Onyeisi Okafor, DFD</li>
+          <li>Dr. Jonathan Tobin, DFD</li>
+          <li>Dr. (Mrs) Modupe Oriyomi Ativie, DFD</li>
+          <li>Dr. Pabina Yinkere, DFD</li>
+          <li>Dr. Moses B. Arokoyo, DF</li>
+          <li>Dr. Chuba Edmund Ojiba, DFD</li>
+          <li>Dr. David Jacob, DFD</li>
+          {" "}
         </ul>
         <div className="learnMore">
           <Link to={"/"}>Go Back</Link>

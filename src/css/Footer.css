@@ -65,20 +65,20 @@ footer .footerMain .logo span {
   font-size: 18px;
   font-weight: 500;
 }
-footer .footerMain > p {
+footer .footerMain > div {
   color: #343d48;
   font-size: 15px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-footer .footerMain > p div {
+footer .footerMain > div p {
   margin: 0 0.3rem;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-footer .footerMain > p div a {
+footer .footerMain > div p a {
   color: #343d48;
   margin: 0 0.3rem;
 }
@@ -104,12 +104,12 @@ footer .footerMain > p div a {
     flex-direction: column;
     align-items: flex-start;
   }
-  footer .footerMain > p {
+  footer .footerMain > div {
     margin: 1rem 0;
     flex-direction: column;
     align-items: flex-start;
   }
-  footer .footerMain > p p {
+  footer .footerMain > div p {
     margin: 1rem 0;
   }
 }/*# sourceMappingURL=Footer.css.map */

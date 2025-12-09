@@ -2,11 +2,14 @@ import React, { useState } from "react";
 import Footer from "../components/Footer";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrophy } from "@fortawesome/free-solid-svg-icons";
-import generateImageBlock from "../components/Block";
+import GalleryPage from "../components/Block";
 import { Link } from "react-router-dom";
 
 const Gallery: React.FC = () => {
-  const [element, setElement] = useState(generateImageBlock([], 12));
+  const [gallery, generateGallery] = useState(
+    <GalleryPage onlyCaption={false} />
+  );
+
   return (
     <section style={{ paddingTop: "50px" }}>
       <section className="intro about imageDescribe">
@@ -15,10 +18,10 @@ const Gallery: React.FC = () => {
           Check Out The ISBMPA Gallery
           <FontAwesomeIcon icon={faTrophy} />
         </p>
-        <div className="flexImages">{element}</div>
+        <div className="flexMedia">{gallery}</div>
         <div
           className="learnMore"
-          onClick={() => setElement(generateImageBlock([], 12))}
+          onClick={() => generateGallery(<GalleryPage onlyCaption={false} />)}
         >
           <Link onClick={(e) => e.preventDefault()} to={"#"}>
             Load More

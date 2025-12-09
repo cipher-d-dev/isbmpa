@@ -47,11 +47,11 @@ footer {
                 font-weight: 500;
             }
         }
-        &>p {
+        &>div {
             color: #343d48;
             font-size: 15px;
             @include flex(center, center);
-            div {
+            p {
                 margin: 0 .3rem;
                 @include flex(center, center);
                 a {
@@ -82,7 +82,7 @@ footer {
         .footerMain {
             flex-direction: column;
             align-items: flex-start;
-            &>p {
+            &>div {
                 margin: 1rem 0;
                 flex-direction: column;
                 align-items: flex-start; 
