@@ -23,9 +23,6 @@ const Home: React.FC = () => {
   const [gallery, generateGallery] = useState(
     <GalleryPage onlyCaption={false} />
   );
-  const [governingCouncil, setGoverningCouncil] = useState(
-    <GalleryPage onlyCaption={true} limit={8} />
-  );
 
   return (
     <section>
@@ -135,7 +132,13 @@ const Home: React.FC = () => {
           institution toward excellence and fostering innovation for a brighter
           future
         </p>
-        <div className="flexMedia">{governingCouncil}</div>
+        <div className="flexMedia">
+          {" "}
+          <GalleryPage onlyCaption={true} limit={8} />
+        </div>
+        <div className="learnMore">
+          <Link to={"/governing-council"}>Explore</Link>
+        </div>
       </section>
       <section className="intro about listed">
         <p>Our Team</p>
