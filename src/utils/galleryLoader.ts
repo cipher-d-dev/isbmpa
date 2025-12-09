@@ -18,9 +18,9 @@ const captions: Record<number, string> = {
   92: "GENERAL CHRISTOPHER GWABIN MUSA, CHIEF OF DEFENCE STAFF (PATRON)",
   93: "AMB.(DR) ADEBOYE OLUWASEUN AMOS, MD/CEO LINCOLN CITY PROPERTY (PATRON)",
   94: "DR. GBADEWOLE AMOS KAYODE, VP REDAN Abuja FCT — PATRON",
-  95: "DR. GBADEWOLE AMOS KAYODE, VP REDAN Abuja FCT — PATRON",
+  95: "ALHAJI (DR) HUSSAINI ADAMU DIKKO, Chairman Board of Directors of Providus Bank Plc - PATRON",
   96: "DR. GBADEWOLE AMOS KAYODE, VP REDAN Abuja FCT — PATRON",
-  97: "DR. DANIEL HASSAN BWALA — Patron & Member Governing Council",
+  97: "DR. DANIEL HASSAN BWALA, SPECIAL ADVISER TO PRESIDENT TINUBU ON MEDIA AND PUBLIC COMMUNICATIONS  - PATRON",
   101: "This is the MD/CEO of Rivers State Microfinance Agency (RIMA), Dr. Jonathan Tobin, we honoured him on Thursday 30th October there in Port Harcourt",
   // potential awardee
 };
