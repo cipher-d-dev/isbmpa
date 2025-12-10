@@ -13,22 +13,22 @@ const OurTeam: React.FC = () => {
         </p>
         <ul>
           <li>
-            Prof. Eric Addo Afful - Vice President / Chairman Governing Council
+            Prof. Eric Addo Afful <br /><b>Vice President / Chairman Governing Council</b>
           </li>
           <li>DR. Ani Freeman - Country Director (Nigeria)</li>
-          <li>DR. Obeng Akotua - Registrar / CEO</li>
+          <li>DR. Obeng Akotua <br /><b>Registrar / CEO</b></li>
           <li>
-            Prof. Godwin Michael Ezarafe - Executive Director Research and
-            Training
+            Prof. Godwin Michael Ezarafe<br /><b>Executive Director Research and
+            Training</b>
           </li>
           <li>Barr (DR.) Opeyemi Aladetola</li>
-          <li>MR. Idongesit Usenideh</li>
-          <li>MS. Precious Freeman</li>
-          <li>REV (DR) James Avelji</li>
-          <li>MRS. Ekom Usenideh</li>
+          <li>Mr. Idongesit Usenideh</li>
+          <li>Ms. Precious Freeman</li>
+          <li>Rev (Dr.) James Avelji</li>
+          <li>Mrs. Ekom Usenideh</li>
           <li>
-            DR. ABIODUN OYENIYI Executive Director Corporate Planning &
-            Logistics 
+            Dr. Abiodun Oyeniyi <br /><b>Executive Director Corporate Planning &
+            Logistics </b>
           </li>
         </ul>
         <div className="learnMore">
