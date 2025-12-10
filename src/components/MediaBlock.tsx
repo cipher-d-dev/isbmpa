@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import type { MediaItem } from "../types/media";
+import { FaPause, FaPlay } from "react-icons/fa";
 
 interface Props {
   item: MediaItem;
@@ -105,12 +106,12 @@ function VideoBlock({ src, caption }: { src?: string; caption?: string }) {
         className={`video-hint ${playing ? "hidden" : ""}`}
         onClick={togglePlay}
       >
-        ▶
+        <FaPlay />
       </div>
 
       {/* Custom controls */}
       <div className="video-controls">
-        <button onClick={togglePlay}>{playing ? "❚❚" : "▶"}</button>
+        <button onClick={togglePlay}>{playing ? <FaPause /> : <FaPlay />}</button>
         <input type="range" value={progress} onChange={seek} />
       </div>
 
