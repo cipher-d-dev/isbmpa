@@ -20,7 +20,7 @@ import Footer from "../components/Footer";
 import GalleryPage from "../components/Block";
 
 const Home: React.FC = () => {
-  const [percentage, setPercentage] = useState<number>(100);
+  const percentage = 100;
   const [gallery, generateGallery] = useState(
     <GalleryPage onlyCaption={false} />,
   );
