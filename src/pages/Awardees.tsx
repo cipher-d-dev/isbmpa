@@ -1,43 +1,57 @@
 import React from "react";
 import Footer from "../components/Footer";
 import { Link } from "react-router-dom";
+import "../css/Home.css";
+
+const awardees = [
+  "Amb. (Engr) Dr. Fajumo Adejide Emmanuel, DFD",
+  "Dr. Ifeoluwa Solomon Oladeji, DFD",
+  "Dr. Ayodeji Olowoloba, DFD",
+  "Dr. Giwa Damilare, DFD",
+  "Dr. Abraham Adeshile Great, DF & DFD",
+  "Dr. Oluwayemisi Oyenubi, DFD",
+  "Dr. Prisca Angwe, DFD",
+  "Dr. Chioma Margaret Oyebisi, DFD",
+  "Dr. Francis Adeyeye, DFD",
+  "Dr. Olalekan Oluwalonimi Oluyelu, DFD",
+  "Dr. Alexander Onyeisi Okafor, DFD",
+  "Dr. Jonathan Tobin, DFD",
+  "Dr. (Mrs) Modupe Oriyomi Ativie, DFD",
+  "Dr. Pabina Yinkere, DFD",
+  "Dr. Moses B. Arokoyo, DF",
+  "Dr. Chuba Edmund Ojiba, DFD",
+  "Dr. David Jacob, DFD",
+];
 
 const Awardees: React.FC = () => {
   return (
-    <section style={{ paddingTop: "50px" }}>
-      <section className="intro about listed">
-        <p>Awardess (2025)</p>
-        {/* <p>
-          The Institute of Strategic Business Management and Public
-          Administration Ghana (ISBMPA) is proud to announce the recipients of
-          the prestigious ISBMPA Fellowship Award for 2025. This award recognizes
-          outstanding individuals who have made significant contributions to
-          their fields and communities.
-        </p> */}
-        <ul>
-          <li>Amb. (Engr) Dr. Fajumo Adejide Emmanuel, DFD</li>
-          <li>Dr. Ifeoluwa Solomon Oladeji, DFD</li>
-          <li>Dr. Ayodeji Olowoloba, DFD</li>
-          <li>Dr. Giwa Damilare, DFD</li>
-          <li>Dr. Abraham Adeshile Great, DF & DFD</li>
-          <li>Dr. Oluwayemisi Oyenubi, DFD</li>
-          <li>Dr. Prisca Angwe, DFD</li>
-          <li>Dr. Chioma Margaret Oyebisi, DFD</li>
-          <li>Dr. Francis Adeyeye, DFD</li>
-          <li>Dr. Olalekan Oluwalonimi Oluyelu, DFD</li>
-          <li>Dr. Alexander Onyeisi Okafor, DFD</li>
-          <li>Dr. Jonathan Tobin, DFD</li>
-          <li>Dr. (Mrs) Modupe Oriyomi Ativie, DFD</li>
-          <li>Dr. Pabina Yinkere, DFD</li>
-          <li>Dr. Moses B. Arokoyo, DF</li>
-          <li>Dr. Chuba Edmund Ojiba, DFD</li>
-          <li>Dr. David Jacob, DFD</li>
-          {" "}
-        </ul>
-        <div className="learnMore">
-          <Link to={"/"}>Go Back</Link>
+    <section style={{ paddingTop: "72px" }}>
+      <div className="site-section">
+        <div className="section-header">
+          <span className="section-label">Fellowship Recognition</span>
+          <h2 className="section-title">
+            Awardees ({new Date().getFullYear()})
+          </h2>
+          <p className="section-subtitle">
+            ISBMPA proudly recognises outstanding individuals who have made
+            significant contributions to their fields and communities.
+          </p>
+          <div className="divider" />
         </div>
-      </section>
+
+        <ol className="awardees-list">
+          {awardees.map((name) => (
+            <li key={name}>{name}</li>
+          ))}
+        </ol>
+
+        <div className="section-cta">
+          <Link to="/" className="btn-outline">
+            ← Go Back
+          </Link>
+        </div>
+      </div>
+
       <Footer />
     </section>
   );

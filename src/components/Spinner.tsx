@@ -3,50 +3,69 @@ import "../css/Spinner.css";
 
 interface SpinnerProps {
   percentage: number;
-  setPercentage: React.Dispatch<React.SetStateAction<number>>;
+  // Removed setPercentage from props as it wasn't being used in the internal logic
 }
 
 const Spinner: React.FC<SpinnerProps> = ({ percentage }) => {
   const targetRef = useRef<HTMLDivElement>(null);
-  const [i, setI] = useState<number>(0); // Moved `i` state outside the scroll handler
-
-  const handleScroll = () => {
-    if (targetRef.current) {
-      const rect = targetRef.current.getBoundingClientRect();
-      const windowHeight = window.innerHeight;
-
-      if (rect.top <= windowHeight && rect.bottom >= 0 && i < percentage) {
-        // Trigger animation logic when the element is visible
-        startIncrement();
-      } else {
-        i !== 0 && setI(0);
-      }
-    }
-  };
-
-  const startIncrement = () => {
-    // Clear any existing interval to prevent multiple animations
-    let interval: ReturnType<typeof setInterval>;
-    interval = setInterval(() => {
-      setI((prev) => {
-        if (prev >= percentage) {
-          clearInterval(interval); // Cleanup when target percentage is reached
-          return prev; // Stop updating
-        }
-        return prev + 1; // Increment the percentage
-      });
-    }, 100);
-  };
+  const [displayValue, setDisplayValue] = useState<number>(0);
+  const [hasStarted, setHasStarted] = useState<boolean>(false);
 
   useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll); // Cleanup scroll listener
-  }, [i, percentage]); // Dependencies include `i` and `percentage`
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const [entry] = entries;
+        if (entry.isIntersecting) {
+          setHasStarted(true);
+        } else {
+          // Reset when it leaves the viewport (optional)
+          setHasStarted(false);
+          setDisplayValue(0);
+        }
+      },
+      { threshold: 0.1 }, // Triggers when 10% of the component is visible
+    );
+
+    if (targetRef.current) {
+      observer.observe(targetRef.current);
+    }
+
+    return () => {
+      if (targetRef.current) observer.unobserve(targetRef.current);
+    };
+  }, []);
+
+  useEffect(() => {
+    let interval: ReturnType<typeof setInterval>;
+
+    if (hasStarted && displayValue < percentage) {
+      interval = setInterval(() => {
+        setDisplayValue((prev) => {
+          if (prev >= percentage) {
+            clearInterval(interval);
+            return prev;
+          }
+          return prev + 1;
+        });
+      }, 30);
+    }
+
+    return () => clearInterval(interval);
+  }, [hasStarted, displayValue, percentage]);
+
+  // Dynamic style for the spinner progress
+  const spinnerStyle = {
+    "--percentage": displayValue,
+  } as React.CSSProperties;
 
   return (
     <div className="spinner-wrapper">
-      <div ref={targetRef} className="spinner"></div>
-      <span className="percentage-text">{i}%</span>
+      <div className="spinner-container" ref={targetRef} style={spinnerStyle}>
+        <div className="spinner-track" />
+        <div className="spinner" />
+        <span className="percentage-text">{displayValue}%</span>
+      </div>
+      <span className="spinner-label">Member Satisfaction Rate</span>
     </div>
   );
 };

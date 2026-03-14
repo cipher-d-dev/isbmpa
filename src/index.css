@@ -1,3 +1,318 @@
-:root, html, body {
-    scroll-behavior: smooth;
+/* ============================================================
+   ISBMPA — Global Design System
+   Aesthetic: Luxury-Refined SaaS Modern
+   Fonts: Cormorant Garamond (display) + DM Sans (body)
+   ============================================================ */
+
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap");
+
+/* ── CSS Custom Properties ─────────────────────────────── */
+:root,
+[data-theme="light"] {
+  /* Core palette */
+  --color-bg: #fafaf8;
+  --color-bg-alt: #f4f3ef;
+  --color-bg-card: #ffffff;
+  --color-bg-glass: rgba(255, 255, 255, 0.72);
+  --color-bg-overlay: rgba(250, 250, 248, 0.85);
+
+  /* Text */
+  --color-text-primary: #1a1a18;
+  --color-text-secondary: #5a5a54;
+  --color-text-muted: #9a9a90;
+  --color-text-inverse: #ffffff;
+
+  /* Accent — warm emerald */
+  --color-accent: #3aa876;
+  --color-accent-dark: #2d8a5f;
+  --color-accent-light: #e6f5ee;
+  --color-accent-glow: rgba(58, 168, 118, 0.18);
+
+  /* Gold accent */
+  --color-gold: #c9a84c;
+  --color-gold-light: #f5edd8;
+
+  /* Borders */
+  --color-border: rgba(26, 26, 24, 0.1);
+  --color-border-strong: rgba(26, 26, 24, 0.18);
+
+  /* Shadows */
+  --shadow-xs: 0 1px 3px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.04);
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.07), 0 1px 3px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.09), 0 2px 6px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.11), 0 3px 10px rgba(0, 0, 0, 0.07);
+  --shadow-xl: 0 16px 48px rgba(0, 0, 0, 0.13), 0 6px 18px rgba(0, 0, 0, 0.08);
+
+  /* Nav */
+  --nav-bg: rgba(250, 250, 248, 0.88);
+  --nav-border: rgba(26, 26, 24, 0.08);
+
+  /* Sidebar */
+  --sidebar-bg: #ffffff;
+
+  /* Hero */
+  --hero-bg: #f0efea;
+
+  /* Footer */
+  --footer-bg: #1a1a18;
+  --footer-text: rgba(255, 255, 255, 0.72);
+  --footer-border: rgba(255, 255, 255, 0.08);
+
+  /* Spinner */
+  --spinner-track: rgba(26, 26, 24, 0.12);
+  --spinner-fill: var(--color-accent);
+}
+
+[data-theme="dark"] {
+  --color-bg: #0f0f0d;
+  --color-bg-alt: #181815;
+  --color-bg-card: #1e1e1b;
+  --color-bg-glass: rgba(20, 20, 17, 0.82);
+  --color-bg-overlay: rgba(15, 15, 13, 0.9);
+
+  --color-text-primary: #f0efe8;
+  --color-text-secondary: #a8a89e;
+  --color-text-muted: #5c5c54;
+  --color-text-inverse: #0f0f0d;
+
+  --color-accent: #4dc48c;
+  --color-accent-dark: #3aa876;
+  --color-accent-light: #0e2419;
+  --color-accent-glow: rgba(77, 196, 140, 0.14);
+
+  --color-gold: #d4ac5c;
+  --color-gold-light: #2a2010;
+
+  --color-border: rgba(240, 239, 232, 0.08);
+  --color-border-strong: rgba(240, 239, 232, 0.14);
+
+  --shadow-xs: 0 1px 3px rgba(0, 0, 0, 0.3);
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.35);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.45);
+  --shadow-xl: 0 16px 48px rgba(0, 0, 0, 0.5);
+
+  --nav-bg: rgba(15, 15, 13, 0.92);
+  --nav-border: rgba(240, 239, 232, 0.07);
+
+  --sidebar-bg: #1e1e1b;
+
+  --hero-bg: #141412;
+
+  --footer-bg: #0a0a08;
+  --footer-text: rgba(240, 239, 232, 0.6);
+  --footer-border: rgba(255, 255, 255, 0.06);
+
+  --spinner-track: rgba(240, 239, 232, 0.1);
+  --spinner-fill: var(--color-accent);
+}
+
+/* ── Reset & Base ────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: "DM Sans", sans-serif;
+  background-color: var(--color-bg);
+  color: var(--color-text-primary);
+  transition:
+    background-color 0.35s ease,
+    color 0.35s ease;
+  line-height: 1.6;
+}
+
+/* ── Typography Scale ─────────────────────────────────────── */
+.font-display {
+  font-family: "Cormorant Garamond", serif;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+
+h4,
+h5,
+h6,
+p,
+li,
+a,
+button,
+input,
+label {
+  font-family: "DM Sans", sans-serif;
+}
+
+/* ── Scrollbar ───────────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-bg-alt);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-border-strong);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-accent);
+}
+
+/* ── Selection ───────────────────────────────────────────── */
+::selection {
+  background: var(--color-accent-light);
+  color: var(--color-accent-dark);
+}
+
+/* ── App Root ─────────────────────────────────────────────── */
+#root > div {
+  position: relative;
+  width: auto;
+  transition: margin 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.condensedBody {
+  margin-left: 280px;
+}
+
+@media (max-width: 800px) {
+  .condensedBody {
+    margin-left: 0;
+  }
+}
+
+/* ── Utility Classes ─────────────────────────────────────── */
+.section-label {
+  display: block;
+  text-align: center;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-bottom: 0.75rem;
+}
+
+.section-title {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 600;
+  color: var(--color-text-primary);
+  text-align: center;
+  line-height: 1.15;
+}
+
+.section-subtitle {
+  font-size: clamp(0.95rem, 1.5vw, 1.05rem);
+  color: var(--color-text-secondary);
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* ── Buttons ─────────────────────────────────────────────── */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.75rem;
+  background: var(--color-accent);
+  color: #fff;
+  font-family: "DM Sans", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 12px var(--color-accent-glow);
+}
+
+.btn-primary:hover {
+  background: var(--color-accent-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px var(--color-accent-glow);
+}
+
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.7rem 1.7rem;
+  background: transparent;
+  color: var(--color-text-primary);
+  font-family: "DM Sans", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  border: 1.5px solid var(--color-border-strong);
+  border-radius: 10px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-outline:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+  background: var(--color-accent-light);
+}
+
+/* ── Card ─────────────────────────────────────────────────── */
+.card {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  box-shadow: var(--shadow-sm);
+  transition:
+    box-shadow 0.3s ease,
+    transform 0.3s ease,
+    background-color 0.35s ease,
+    border-color 0.35s ease;
+}
+
+.card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-3px);
+}
+
+/* ── Divider ─────────────────────────────────────────────── */
+.divider {
+  width: 48px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--color-accent), var(--color-gold));
+  border-radius: 2px;
+  margin: 0 auto 2rem;
+}
+
+/* ── Accent pill ─────────────────────────────────────────── */
+.accent-pill {
+  display: inline-block;
+  padding: 0.25rem 0.8rem;
+  background: var(--color-accent-light);
+  color: var(--color-accent-dark);
+  border-radius: 100px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
 }

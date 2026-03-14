@@ -3,31 +3,44 @@ import Footer from "../components/Footer";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrophy } from "@fortawesome/free-solid-svg-icons";
 import GalleryPage from "../components/Block";
-import { Link } from "react-router-dom";
+import "../css/Home.css";
 
 const Gallery: React.FC = () => {
   const [gallery, generateGallery] = useState(
-    <GalleryPage onlyCaption={false} />
+    <GalleryPage onlyCaption={false} />,
   );
 
   return (
-    <section style={{ paddingTop: "50px" }}>
-      <section className="intro about imageDescribe">
-        <h1 style={{ textAlign: "center" }}>Gallery</h1>
-        <p>
-          Check Out The ISBMPA Gallery
-          <FontAwesomeIcon icon={faTrophy} />
-        </p>
-        <div className="flexMedia">{gallery}</div>
-        <div
-          className="learnMore"
-          onClick={() => generateGallery(<GalleryPage onlyCaption={false} />)}
-        >
-          <Link onClick={(e) => e.preventDefault()} to={"#"}>
-            Load More
-          </Link>
+    <section style={{ paddingTop: "72px" }}>
+      <div className="site-section">
+        <div className="section-header">
+          <span className="section-label">Gallery</span>
+          <h2 className="section-title">
+            ISBMPA Gallery{" "}
+            <FontAwesomeIcon
+              icon={faTrophy}
+              style={{ color: "var(--color-gold)", fontSize: "0.7em" }}
+            />
+          </h2>
+          <p className="section-subtitle">
+            A visual journey through our events, milestones, and community.
+          </p>
+          <div className="divider" />
         </div>
-      </section>
+
+        <div className="flexMedia">{gallery}</div>
+
+        <div className="section-cta">
+          <button
+            className="btn-outline"
+            onClick={() => generateGallery(<GalleryPage onlyCaption={false} />)}
+            style={{ cursor: "pointer" }}
+          >
+            Load More
+          </button>
+        </div>
+      </div>
+
       <Footer />
     </section>
   );
