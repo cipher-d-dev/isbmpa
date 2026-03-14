@@ -6,7 +6,6 @@ import {
   faBuilding,
   faLocationDot,
   faPhone,
-  faEnvelope,
   faCommentDots,
   faArrowRight,
 } from "@fortawesome/free-solid-svg-icons";
