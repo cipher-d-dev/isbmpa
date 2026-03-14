@@ -1,0 +1,289 @@
+/* ============================================================
+   Modern Video Player — MediaBlock.tsx
+   Add/merge this into your Home.css or import separately
+   ============================================================ */
+
+/* ── Gallery item wrapper ──────────────────────────────────── */
+.flexMedia .item {
+  display: inline-block;
+  width: 100%;
+  margin-bottom: 14px;
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.flexMedia .item:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--color-border-strong);
+}
+
+/* ── Image block ─────────────────────────────────────────────── */
+.flexMedia .item .image {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.flexMedia .item .image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.flexMedia .item:hover .image img {
+  transform: scale(1.04);
+}
+
+.flexMedia .item .image .description {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1.75rem 0.85rem 0.75rem;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.72) 0%, transparent 100%);
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 400;
+  line-height: 1.55;
+  z-index: 2;
+}
+
+/* ── Video player wrapper ────────────────────────────────────── */
+.flexMedia .item .video.vp-wrap {
+  position: relative;
+  width: 100%;
+  background: #000;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.flexMedia .item .video.vp-wrap video {
+  width: 100%;
+  height: auto;
+  display: block;
+  pointer-events: none;
+}
+
+/* ── Center play/pause button ────────────────────────────────── */
+.vp-center-btn {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+  transition: opacity 0.25s ease;
+}
+
+.vp-center-btn.vp-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.vp-play-circle {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.16);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1.5px solid rgba(255, 255, 255, 0.32);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 1rem;
+  padding-left: 3px; /* optical centering for play triangle */
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease;
+}
+
+.vp-wrap:hover .vp-play-circle {
+  transform: scale(1.1);
+  background: rgba(255, 255, 255, 0.24);
+}
+
+/* ── Caption ─────────────────────────────────────────────────── */
+/* Hidden by default — slides up alongside the controls on hover  */
+.vp-caption {
+  position: absolute;
+  bottom: max(0px, min(54px, calc(100% - 48px)));
+  left: 0;
+  right: 0;
+  padding: 0 10px;
+  z-index: 4;
+  pointer-events: none;
+  opacity: 0;
+  transform: translateY(6px);
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease;
+}
+
+/* Reveal on hover only */
+.vp-wrap:hover .vp-caption {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.vp-caption-text {
+  display: inline-block;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  color: rgba(255, 255, 255, 0.92);
+  font-size: 0.7rem;
+  font-weight: 400;
+  line-height: 1.5;
+  padding: 4px 8px;
+  border-radius: 6px;
+  max-width: 95%;
+}
+
+/* ── Controls bar ────────────────────────────────────────────── */
+.vp-controls {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 28px 10px 10px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.76) 0%, transparent 100%);
+  opacity: 0;
+  transform: translateY(6px);
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease;
+  z-index: 5;
+}
+
+/* Reveal on hover only — disappears the moment cursor leaves */
+.vp-wrap:hover .vp-controls {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Seek bar ────────────────────────────────────────────────── */
+.vp-seek-wrap {
+  margin-bottom: 8px;
+}
+
+.vp-seek {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 3px;
+  border-radius: 2px;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0.88) var(--pct, 0%),
+    rgba(255, 255, 255, 0.22) var(--pct, 0%)
+  );
+  outline: none;
+  cursor: pointer;
+  transition: height 0.15s ease;
+}
+
+.vp-seek:hover {
+  height: 5px;
+}
+
+.vp-seek::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: #fff;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.45);
+  transition: transform 0.15s ease;
+}
+
+.vp-seek::-webkit-slider-thumb:hover {
+  transform: scale(1.3);
+}
+
+.vp-seek::-moz-range-thumb {
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: #fff;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.45);
+}
+
+/* ── Bottom row ──────────────────────────────────────────────── */
+.vp-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.vp-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border: none;
+  background: none;
+  padding: 0;
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 0.75rem;
+  cursor: pointer;
+  border-radius: 6px;
+  flex-shrink: 0;
+  transition:
+    color 0.15s ease,
+    background 0.15s ease,
+    transform 0.15s ease;
+}
+
+.vp-btn:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.12);
+  transform: scale(1.1);
+}
+
+.vp-time {
+  font-size: 0.68rem;
+  color: rgba(255, 255, 255, 0.72);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+  letter-spacing: 0.02em;
+  padding-left: 2px;
+}
+
+/* ── Responsive grid ─────────────────────────────────────────── */
+.flexMedia {
+  column-count: 4;
+  column-gap: 14px;
+  padding: 1rem 0;
+}
+
+@media (max-width: 1024px) {
+  .flexMedia {
+    column-count: 3;
+  }
+}
+@media (max-width: 750px) {
+  .flexMedia {
+    column-count: 2;
+  }
+}
+@media (max-width: 480px) {
+  .flexMedia {
+    column-count: 1;
+  }
+}
