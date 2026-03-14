@@ -1,25 +1,6 @@
-@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap");
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+/* App-level overrides — all base styles live in globals.css */
 
-body {
-  font-family: "DM Sans", "DM Sans 14pt", "Poppins", sans-serif;
+/* Main content area */
+main {
+  min-height: 100vh;
 }
-
-#root > div {
-  position: relative;
-  width: auto;
-  transition: 0.3s linear;
-}
-
-.condensedBody {
-  margin-left: 250px;
-}
-@media screen and (max-width: 800px) {
-  .condensedBody {
-    margin-left: 0;
-  }
-}/*# sourceMappingURL=App.css.map */

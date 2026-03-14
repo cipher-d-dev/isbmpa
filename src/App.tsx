@@ -18,11 +18,11 @@ function App() {
   const [navOpen, setnavOpen] = useState<boolean>(false);
 
   return (
+    // ThemeProvider lives inside MainLayout so it wraps the entire app tree
     <div className={navOpen ? "condensedBody" : ""}>
       <Router>
         <ScrollToTop />
         <Routes>
-          {/* Public Routes */}
           <Route
             path="/"
             element={<MainLayout navOpen={navOpen} setnavOpen={setnavOpen} />}
