@@ -1,115 +1,166 @@
-@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap");
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+/* ============================================================
+   Footer — Premium Dark
+   ============================================================ */
+
+footer.site-footer {
+  background-color: var(--footer-bg);
+  color: var(--footer-text);
+  padding: 4rem 6% 2rem;
+  transition: background-color 0.35s ease;
 }
 
-footer {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  background-color: #e9e9e9;
-  padding: 2rem;
-  overflow: hidden;
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem 3rem;
+  padding-bottom: 3rem;
+  border-bottom: 1px solid var(--footer-border);
+  margin-bottom: 2rem;
 }
-footer .footerFlex {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+
+.footer-col h2 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.9);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 1.25rem;
+  position: relative;
 }
-footer .footerFlex .item {
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  flex-direction: column;
-  width: 300px;
+
+.footer-col h2::after {
+  content: "";
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--color-accent);
+  margin-top: 0.5rem;
+  border-radius: 2px;
 }
-footer .footerFlex .item h2 {
-  font-size: 18px;
-  font-weight: 500;
-  margin: 0.3rem 0;
-}
-footer .footerFlex .item a, footer .footerFlex .item p {
-  color: #02073e;
+
+.footer-col a,
+.footer-col p {
+  display: block;
+  font-size: 0.875rem;
+  color: var(--footer-text);
   text-decoration: none;
-  margin: 0.4rem 0;
-  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 0.6rem;
+  transition: color 0.2s ease;
 }
-footer .footerMain {
+
+.footer-col a:hover {
+  color: var(--color-accent);
+}
+
+.footer-col p b {
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 500;
+}
+
+/* ── Footer Bottom ──────────────────────────────────────────── */
+.footer-bottom {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-top: 1px solid #BBB;
-  width: 100%;
-  margin-top: 2rem;
-  padding: 1rem 0;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
-footer .footerMain .logo {
+
+.footer-brand {
   display: flex;
   align-items: center;
-  justify-content: center;
+  gap: 0.6rem;
 }
-footer .footerMain .logo > div, footer .footerMain .logo > span {
-  margin: 0 0.3rem;
+
+.footer-brand .brand-img {
+  width: 36px;
+  height: 36px;
 }
-footer .footerMain .logo .image {
-  width: 50px;
-}
-footer .footerMain .logo .image img {
+
+.footer-brand .brand-img img {
   width: 100%;
   height: 100%;
+  object-fit: contain;
 }
-footer .footerMain .logo span {
-  font-size: 18px;
-  font-weight: 500;
+
+.footer-brand span {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.9);
+  letter-spacing: 0.04em;
 }
-footer .footerMain > div {
-  color: #343d48;
-  font-size: 15px;
+
+.footer-meta {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.footer-meta .copyright {
+  font-size: 0.8rem;
+  color: var(--footer-text);
+}
+
+.footer-meta .powered {
+  font-size: 0.8rem;
+  color: var(--footer-text);
+}
+
+.footer-meta .powered a {
+  color: var(--color-accent);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-meta .powered a:hover {
+  color: var(--color-accent-dark);
+}
+
+.footer-social {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.footer-social a {
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 34px;
+  height: 34px;
+  border: 1px solid var(--footer-border);
+  border-radius: 8px;
+  color: var(--footer-text);
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: all 0.2s ease;
 }
-footer .footerMain > div p {
-  margin: 0 0.3rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+
+.footer-social a:hover {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  color: #fff;
+  transform: translateY(-2px);
 }
-footer .footerMain > div p a {
-  color: #343d48;
-  margin: 0 0.3rem;
-}
-@media screen and (max-width: 1280px) {
-  footer .footerFlex {
-    display: grid;
-    place-content: flex-start;
+
+/* ── Responsive ─────────────────────────────────────────────── */
+@media (max-width: 1280px) {
+  .footer-grid {
     grid-template-columns: 1fr 1fr;
   }
-  footer .footerFlex .item {
-    margin: 1rem 0;
+}
+
+@media (max-width: 640px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
   }
 }
-@media screen and (max-width: 900px) {
-  footer .footerFlex {
-    grid-template-columns: 1fr;
-    place-content: center;
-  }
-  footer .footerFlex .item {
-    place-self: center;
-  }
-  footer .footerMain {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  footer .footerMain > div {
-    margin: 1rem 0;
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  footer .footerMain > div p {
-    margin: 1rem 0;
-  }
-}/*# sourceMappingURL=Footer.css.map */
