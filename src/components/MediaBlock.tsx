@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import type { MediaItem } from "../types/media";
 import { FaPause, FaPlay, FaVolumeUp, FaVolumeMute } from "react-icons/fa";
+import "../css/VideoPlayer.css";
 
 interface Props {
   item: MediaItem;

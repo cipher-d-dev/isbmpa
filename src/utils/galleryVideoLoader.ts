@@ -7,9 +7,11 @@ export interface VideoItem {
 
 // Optional captions for specific videos
 const videoCaptions: Record<number, string> = {
-    1: "Group Managing Director of ESTYMOL Rev (Mrs) Maureen Okoro-Sokoh been decorated as Patron and Member Governing Council of the Institute of Strategic Business Management and Public Administration Ghana recently",
-    2: "Group Managing Director of ESTYMOL Rev (Mrs) Maureen Okoro-Sokoh been decorated as Patron and Member Governing Council of the Institute of Strategic Business Management and Public Administration Ghana recently",
-    3: "Group Managing Director of ESTYMOL Rev (Mrs) Maureen Okoro-Sokoh been decorated as Patron and Member Governing Council of the Institute of Strategic Business Management and Public Administration Ghana recently",
+  1: "Group Managing Director of ESTYMOL Rev (Mrs) Maureen Okoro-Sokoh been decorated as Patron and Member Governing Council of the Institute of Strategic Business Management and Public Administration Ghana recently",
+  2: "Group Managing Director of ESTYMOL Rev (Mrs) Maureen Okoro-Sokoh been decorated as Patron and Member Governing Council of the Institute of Strategic Business Management and Public Administration Ghana recently",
+  3: "Group Managing Director of ESTYMOL Rev (Mrs) Maureen Okoro-Sokoh been decorated as Patron and Member Governing Council of the Institute of Strategic Business Management and Public Administration Ghana recently",
+  4: "WIFE OF GEN. CHRIS-GARUBA (RTD), DR ENEWA RITA CHRIS-GARUBA (MRS), PRINCIPAL PARTNER, TEMPLE CHAMBERS ABUJA BEEN CONFERED WITH A DISTINGUISHED FELLOWSHIP DOCTORATE IN ARBITRATION AND WOMEN EMPOWERMENT BY ISBMPA GHANA",
+  5: "WIFE OF GEN. CHRIS-GARUBA (RTD), DR ENEWA RITA CHRIS-GARUBA (MRS), PRINCIPAL PARTNER, TEMPLE CHAMBERS ABUJA BEEN CONFERED WITH A DISTINGUISHED FELLOWSHIP DOCTORATE IN ARBITRATION AND WOMEN EMPOWERMENT BY ISBMPA GHANA",
 };
 
 const videoModules = import.meta.glob(
@@ -17,7 +19,7 @@ const videoModules = import.meta.glob(
   {
     eager: true,
     import: "default",
-  }
+  },
 );
 
 export const loadGalleryVideos = (): VideoItem[] => {

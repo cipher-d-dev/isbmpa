@@ -4,23 +4,20 @@ import { Link } from "react-router-dom";
 import "../css/Home.css";
 
 const awardees = [
-  "Amb. (Engr) Dr. Fajumo Adejide Emmanuel, DFD",
-  "Dr. Ifeoluwa Solomon Oladeji, DFD",
-  "Dr. Ayodeji Olowoloba, DFD",
-  "Dr. Giwa Damilare, DFD",
-  "Dr. Abraham Adeshile Great, DF & DFD",
-  "Dr. Oluwayemisi Oyenubi, DFD",
-  "Dr. Prisca Angwe, DFD",
-  "Dr. Chioma Margaret Oyebisi, DFD",
-  "Dr. Francis Adeyeye, DFD",
-  "Dr. Olalekan Oluwalonimi Oluyelu, DFD",
-  "Dr. Alexander Onyeisi Okafor, DFD",
-  "Dr. Jonathan Tobin, DFD",
-  "Dr. (Mrs) Modupe Oriyomi Ativie, DFD",
-  "Dr. Pabina Yinkere, DFD",
-  "Dr. Moses B. Arokoyo, DF",
-  "Dr. Chuba Edmund Ojiba, DFD",
-  "Dr. David Jacob, DFD",
+  "Dr. Ife Olusegen Ebenezer David, DFD",
+  "Dr. (Mrs) Modupe Oyekunle, DFD",
+  "Dr. Ronald Ogochukwu Ezaka, DF",
+  "Engr (Dr) Bolaji Abayomi Olajide, DFD",
+  "Dr. Rita Chris-Garuba (Mrs), DFD",
+  "Dr. (Mrs) Erica Maduba, DFD",
+  "Dr. Bukola Francisca Oluyelu, DFD",
+  "Dr. Adeola Ogundele, DFD",
+  "Dr. Hafsah Balogun Omotoso, DF",
+  "Engr (Dr.) Kamar Adeyemi, DFD",
+  "Mr. Joseph Obule Odama, DF",
+  "Dr. Nora Victor Awojo, DFD",
+  "Dr. Ikem Ume-ezeoke, DF",
+  "Dr. Oluwadara Zaccheus, DFD"
 ];
 
 const Awardees: React.FC = () => {
