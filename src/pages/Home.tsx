@@ -21,9 +21,7 @@ import GalleryPage from "../components/Block";
 
 const Home: React.FC = () => {
   const percentage = 100;
-  const [gallery, generateGallery] = useState(
-    <GalleryPage onlyCaption={false} />,
-  );
+  const [galleryRefreshKey, setGalleryRefreshKey] = useState(0);
 
   return (
     <section>
@@ -247,12 +245,18 @@ const Home: React.FC = () => {
           <div className="divider" />
         </div>
 
-        <div className="flexMedia">{gallery}</div>
+        <div className="flexMedia">
+          <GalleryPage
+            key={galleryRefreshKey}
+            onlyCaption={false}
+            refreshKey={galleryRefreshKey}
+          />
+        </div>
 
         <div className="section-cta">
           <button
             className="btn-outline"
-            onClick={() => generateGallery(<GalleryPage onlyCaption={false} />)}
+            onClick={() => setGalleryRefreshKey((current) => current + 1)}
             style={{ cursor: "pointer" }}
           >
             Load More

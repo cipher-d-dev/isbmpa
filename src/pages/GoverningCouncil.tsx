@@ -6,9 +6,7 @@ import GalleryPage from "../components/Block";
 import "../css/Home.css";
 
 const GoverningCouncil: React.FC = () => {
-  const [gallery, generateGallery] = useState(
-    <GalleryPage onlyCaption={true} />,
-  );
+  const [galleryRefreshKey, setGalleryRefreshKey] = useState(0);
 
   return (
     <section style={{ paddingTop: "72px" }}>
@@ -30,12 +28,18 @@ const GoverningCouncil: React.FC = () => {
           <div className="divider" />
         </div>
 
-        <div className="flexMedia">{gallery}</div>
+        <div className="flexMedia">
+          <GalleryPage
+            key={galleryRefreshKey}
+            onlyCaption={true}
+            refreshKey={galleryRefreshKey}
+          />
+        </div>
 
         <div className="section-cta">
           <button
             className="btn-outline"
-            onClick={() => generateGallery(<GalleryPage onlyCaption={true} />)}
+            onClick={() => setGalleryRefreshKey((current) => current + 1)}
             style={{ cursor: "pointer" }}
           >
             Load More
