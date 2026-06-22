@@ -13,7 +13,7 @@ const Footer: React.FC = () => {
           <h2>Links</h2>
           <Link to="/about">About Us</Link>
           <Link to="/our-team">Our Team</Link>
-          <Link to="/fellowship-awards">Fellowship Awards</Link>
+          <Link to="/awardees">Fellowship Awards</Link>
           <Link to="/governing-council">Governing Council</Link>
         </div>
 
