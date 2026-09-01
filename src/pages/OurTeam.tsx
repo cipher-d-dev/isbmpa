@@ -8,17 +8,13 @@ const teamMembers = [
     name: "Prof. Eric Addo Afful",
     role: "Vice President / Chairman Governing Council",
   },
-  { name: "DR. Ani Freeman", role: "Country Director (Nigeria)" },
-  { name: "DR. Obeng Akotua", role: "Registrar / CEO" },
+  { name: "Dr. Ani Freeman", role: "Country Director (Nigeria)" },
+  { name: "Dr. Obeng Akotua", role: "Registrar / CEO" },
   {
     name: "Prof. Godwin Michael Ezarafe",
     role: "Executive Director Research and Training",
   },
-  { name: "Barr (DR.) Opeyemi Aladetola", role: "" },
-  { name: "Mr. Idongesit Usenideh", role: "" },
-  { name: "Ms. Precious Freeman", role: "" },
-  { name: "Rev (Dr.) James Avelji", role: "" },
-  { name: "Mrs. Ekom Usenideh", role: "" },
+  { name: "Barr (Dr.) Opeyemi Aladetola", role: "Executive Director Corporate Affairs & Legal Services" },
   {
     name: "Dr. Abiodun Oyeniyi",
     role: "Executive Director Corporate Planning & Logistics",
@@ -27,6 +23,10 @@ const teamMembers = [
     name: "Dr. Olalekan Oluwalonimi Oluyelu, DFD",
     role: "Executive Director Corporate Branding & Promotions",
   },
+  { name: "Mr. Idongesit Usenideh", role: "" },
+  { name: "Ms. Precious Freeman", role: "" },
+  { name: "Rev (Dr.) James Avelji", role: "" },
+  { name: "Mrs. Ekom Usenideh", role: "" },
 ];
 
 const OurTeam: React.FC = () => {
