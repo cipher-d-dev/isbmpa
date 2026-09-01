@@ -23,6 +23,10 @@ const teamMembers = [
     name: "Dr. Abiodun Oyeniyi",
     role: "Executive Director Corporate Planning & Logistics",
   },
+  {
+    name: "Dr. Olalekan Oluwalonimi Oluyelu, DFD",
+    role: "Executive Director Corporate Branding & Promotions",
+  },
 ];
 
 const OurTeam: React.FC = () => {
