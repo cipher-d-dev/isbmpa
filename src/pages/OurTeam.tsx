@@ -20,8 +20,12 @@ const teamMembers = [
     role: "Executive Director Corporate Planning & Logistics",
   },
   {
-    name: "Dr. Olalekan Oluwalonimi Oluyelu, DFD",
+    name: "Dr. Olalekan Oluwalonimi Oluyelu",
     role: "Executive Director Corporate Branding & Promotions",
+  },
+  {
+    name: "Barr. John Kyrian Etuk",
+    role: "Abuja Bureau Chief"
   },
   { name: "Mr. Idongesit Usenideh", role: "" },
   { name: "Ms. Precious Freeman", role: "" },
